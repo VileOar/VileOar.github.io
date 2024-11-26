@@ -7,6 +7,9 @@
 */
 
 (function() {
+  // comment this line if you want aos (activate on scroll animations)
+  AOS.init({disable: true});
+
   "use strict";
 
   /**
@@ -100,7 +103,7 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  //window.addEventListener('load', aosInit);
 
   /**
    * Init typed.js
