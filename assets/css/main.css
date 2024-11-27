@@ -447,9 +447,7 @@ h6 {
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  position: relative;
 }
 
 .footer h3 {
@@ -1377,9 +1375,9 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
+/*.starter-section {*/
   /* Add your styles here */
-}
+/*}*/
 
 /*--------------------------------------------------------------
 # Contact Section
