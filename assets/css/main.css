@@ -67,13 +67,13 @@ body {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--heading-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--heading-color), transparent 25%);
   text-decoration: none;
 }
 
@@ -1028,6 +1028,7 @@ section,
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--accent-color);
 }
 
 .resume .resume-item ul {
@@ -1052,6 +1053,20 @@ section,
   top: 0;
   background: var(--background-color);
   border: 2px solid var(--accent-color);
+}
+
+.resume .resume-item .icon {
+  width: 32px;
+  height: 32px;
+  fill: var(--accent-color);
+  padding-left: 8px;
+}
+
+.resume .resume-item .icon:hover {
+  width: 32px;
+  height: 32px;
+  fill: color-mix(in srgb, var(--accent-color), transparent 25%);
+  padding-left: 8px;
 }
 
 /*--------------------------------------------------------------
