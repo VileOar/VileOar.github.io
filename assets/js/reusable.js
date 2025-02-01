@@ -54,7 +54,11 @@ class Footer extends HTMLElement {
 }
 
 let headContent = `
-    <!-- Favicons -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
