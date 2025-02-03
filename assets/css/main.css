@@ -11,9 +11,19 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+@font-face {
+  font-family: 'PetitaMedium';
+  src: url('/assets/fonts/petita/PetitaMedium.ttf');
+}
+
+@font-face {
+  font-family: 'PetitaBold';
+  src: url('/assets/fonts/petita/PetitaBold.ttf');
+}
+
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
+  --default-font: PetitaMedium, "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: PetitaBold, "Raleway",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
 }
 
@@ -22,7 +32,7 @@
   --background-color: #13101A; /* Background color for the entire website, including individual sections */
   --default-color: #B4C5E4; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #F79256; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #4E4AC7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #564ac7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #1B1D30; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #13101A; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
