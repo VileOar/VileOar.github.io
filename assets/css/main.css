@@ -29,11 +29,12 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #13101A; /* Background color for the entire website, including individual sections */
+  --background-color: #1B1D30; /* Background color for the entire website, including individual sections */
   --default-color: #B4C5E4; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #F79256; /* Color for headings, subheadings and title throughout the website */
+  --highlight-color: #F5F5FA; /* A lighter text colour for parts that need to be emphasised but are not headings */
+  --heading-color: #F79256; /* Default color for headings, subheadings and title throughout the website */
   --accent-color: #564ac7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #1B1D30; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --surface-color: #13101A; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #13101A; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
@@ -50,15 +51,15 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #13101A;
-  --surface-color: #1B1D30;
+  --background-color: #1B1D30;
+  --surface-color: #13101A;
 }
 
 .dark-background {
-  --background-color: rgba(15, 15, 15, 0.975);
+  --background-color: #1B1D30;
   --default-color: #B4C5E4;
   --heading-color: #B4C5E4;
-  --surface-color: #1B1D30;
+  --surface-color: #13101A;
   --contrast-color: #13101A;
 }
 
@@ -72,18 +73,18 @@
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   font-family: var(--default-font);
 }
 
 a {
-  color: var(--heading-color);
+  color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--heading-color), transparent 25%);
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);
   text-decoration: none;
 }
 
@@ -140,7 +141,7 @@ h6 {
 
 .php-email-form .loading {
   display: none;
-  background: var(--surface-color);
+  background: var(--background-color);
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -154,7 +155,7 @@ h6 {
   height: 24px;
   margin: 0 10px -6px 0;
   border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
+  border-top-color: var(--background-color);
   animation: php-email-form-loading 1s linear infinite;
 }
 
@@ -172,9 +173,8 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  /*--background-color: rgba(0, 0, 0, 1);*/
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--surface-color);
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -195,16 +195,6 @@ h6 {
   font-weight: 700;
   color: var(--heading-color);
 }
-
-/*.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}*/
-
-/* Global Header on Scroll
-------------------------------*/
-/*.scrolled .header {
-  --background-color: rgba(0, 0, 0, 0.8);
-}*/
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -472,20 +462,20 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--surface-color);
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
   position: relative;
 }
 
-.footer h3 {
+/* .footer h3 {
   font-size: 36px;
   font-weight: 700;
   position: relative;
   padding: 0;
   margin: 0 0 15px 0;
-}
+} */
 
 .footer p {
   font-size: 15;
@@ -494,11 +484,11 @@ h6 {
   margin: 0 0 30px 0;
 }
 
-.footer .social-links {
+/* .footer .social-links {
   margin: 0 0 30px 0;
-}
+} */
 
-.footer .social-links a {
+/* .footer .social-links a {
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -517,7 +507,7 @@ h6 {
 .footer .social-links a:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   text-decoration: none;
-}
+} */
 
 .footer .copyright {
   padding-top: 25px;
@@ -537,7 +527,7 @@ h6 {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
+  background: var(--surface-color);
   transition: all 0.6s ease-out;
 }
 
@@ -612,7 +602,7 @@ h6 {
 --------------------------------------------------------------*/
 .page-title {
   color: var(--default-color);
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   position: relative;
 }
 
@@ -657,7 +647,7 @@ h6 {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   padding: 40px 0px;
   scroll-margin-top: 100px;
   overflow: clip;
@@ -820,14 +810,14 @@ section,
 # Stats Section
 --------------------------------------------------------------*/
 .stats i {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   color: var(--accent-color);
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   width: 54px;
   height: 54px;
   font-size: 24px;
   border-radius: 50px;
-  border: 2px solid var(--background-color);
+  border: 2px solid var(--surface-color);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -836,7 +826,7 @@ section,
 }
 
 .stats .stats-item {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   margin-top: -27px;
   padding: 30px 30px 25px 30px;
   width: 100%;
@@ -902,7 +892,7 @@ section,
 # Interests Section
 --------------------------------------------------------------*/
 .interests .features-item {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   padding: 20px;
@@ -957,7 +947,7 @@ section,
   margin: -40px 0 0 40px;
   position: relative;
   z-index: 2;
-  border: 6px solid var(--background-color);
+  border: 6px solid var(--surface-color);
 }
 
 .testimonials .testimonial-item h3 {
@@ -997,7 +987,7 @@ section,
   font-style: italic;
   margin: 0 15px 0 15px;
   padding: 20px 20px 60px 20px;
-  background: var(--surface-color);
+  background: var(--background-color);
   border-radius: 6px;
   position: relative;
   z-index: 1;
@@ -1015,7 +1005,7 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: var(--background-color);
+  background-color: var(--surface-color);
   opacity: 1;
   border: 1px solid var(--accent-color);
 }
@@ -1042,22 +1032,22 @@ section,
   position: relative;
 }
 
-.resume .resume-item h4 {
+.resume .resume-item .item-title {
   line-height: 18px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--highlight-color);
   margin-bottom: 10px;
 }
 
-.resume .resume-item h5 {
+.resume .resume-item .inner-title {
   font-size: 16px;
   padding: 5px 15px;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 10px;
-  color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
 .resume .resume-item ul {
@@ -1066,22 +1056,6 @@ section,
 
 .resume .resume-item ul li {
   padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: var(--background-color);
-  border: 2px solid var(--accent-color);
 }
 
 .resume .resume-item .icon {
@@ -1095,6 +1069,7 @@ section,
   width: 32px;
   height: 32px;
   fill: color-mix(in srgb, var(--accent-color), transparent 25%);
+  transition: 0.3s;
   padding-left: 8px;
 }
 
@@ -1102,7 +1077,7 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   text-align: center;
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
@@ -1160,7 +1135,7 @@ section,
 }
 
 .services .service-item:hover .icon {
-  background: var(--surface-color);
+  background: var(--background-color);
 }
 
 .services .service-item:hover .icon i {
@@ -1168,7 +1143,7 @@ section,
 }
 
 .services .service-item:hover .icon::before {
-  background: color-mix(in srgb, var(--background-color), transparent 70%);
+  background: color-mix(in srgb, var(--surface-color), transparent 70%);
 }
 
 .services .service-item:hover h3,
@@ -1180,7 +1155,7 @@ section,
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .services-list {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   padding: 10px 30px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   margin-bottom: 20px;
@@ -1378,14 +1353,10 @@ section,
 }
 
 .portfolio-details .portfolio-info {
-  background-color: var(--background-color);
+  background-color: var(--surface-color);
   padding: 30px;
   height: 100%;
   flex-direction: column;
-}
-
-.portfolio-details .portfolio-info h1 {
-  margin: 20px 0;
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -1421,6 +1392,19 @@ section,
 .project-gallery .row>* {
   padding: 0 4px;
   margin: 4px 0;
+}
+
+.portfolio-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portfolio-info .inner-title {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--highlight-color);
+  margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1493,7 +1477,7 @@ section,
 .contact .php-email-form input[type=email],
 .contact .php-email-form textarea {
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
   font-size: 14px;
   padding: 10px 15px;
