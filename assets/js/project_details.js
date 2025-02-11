@@ -1,12 +1,21 @@
+const baseMediaPath = "/assets/img/projects/"; // TODO: move elsewhere
+const videoProxyImg = "/assets/img/video_thumbnail.png";
+
 (function() {
-    let prjId = "yellow_sky"
+    const fallback = "yellow_sky"; // fallback to yellow sky
+    
+    let params = new URLSearchParams(document.location.search);
+    let prjId = params.get("prj");
 
     fetch("/assets/data/projects.json")
         .then((response) => response.json())
-        .then((json) => fillProjectData(json[prjId]));
+        .then((json) => {
+            prjId = (prjId in json)?prjId:fallback
+            fillProjectData(json[prjId], prjId)
+        });
 })()
 
-function fillProjectData(data) {
+function fillProjectData(data, prjId) {
     // set name and description
     document.getElementById("prj_name").innerHTML = data["name"];
     document.getElementById("prj_desc").innerHTML = data["description"];
@@ -24,12 +33,27 @@ function fillProjectData(data) {
         }
     }
 
-    // set cover images
-    // TODO...
+    // set cover image
+    let coverStr = parseMediaId(data["media"]["cover"], prjId);
+    document.getElementById("prj_cover").innerHTML = buildMediaElement(coverStr);
 
     // set images
-    // TODO...
+    let imgData = data["media"]["gallery"];
+    let galleryElem = document.getElementById("prj_imgs");
+    if (imgData && galleryElem) {
+        for (let media of imgData) {
+            galleryElem.innerHTML += buildGalleryItem(parseMediaId(media, prjId));
+        }
+    }
 
+    /**
+     * Initiate glightbox
+     */
+    const glightbox = GLightbox({
+    selector: '.project-glightbox'
+    });
+
+    // set roles and responsibilities
     let roles = data["roles"];
     let rolesColElems = [
         document.getElementById("prj_roles_col1"),
@@ -57,4 +81,68 @@ function fillProjectData(data) {
 
     // set the body content
     // TODO: if there is an html file in the asset folder with this id, render it here
+}
+
+/**
+ * return an html element to place in the project gallery
+ * @param {string} url path to image, link to video, etc.
+ * @returns html element string
+ */
+function buildGalleryItem(url) {
+    // TODO: add a description argument
+    return `
+        <div class="col-2">
+            <div class ="d-flex justify-content-center">
+            <a class="project-glightbox" href="${url}">
+                ${buildMediaElement(url, true)}
+            </a>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * build an html string from a link to image/video/...
+ * @param {string} url path to image, link to video, etc.
+ * @param {boolean} forceImage if true, returns an image even if media is a video
+ * @returns an html element to be added to page
+ */
+function buildMediaElement(url, forceImage=false) {
+    if (isValidURL(url)) { // is web content
+        if (forceImage) {
+            return `<img src="${videoProxyImg}" class="img-fluid" alt="Image">`
+        }
+        return `<iframe src="${url}" frameborder="0" allowfullscreen></iframe>`;
+    }
+    return `<img src="${url}" class="img-fluid" alt="Image">`;
+}
+
+/**
+ * check if the url resolves to a valid url
+ * @param {string} url path to image, link to video, etc.
+ * @returns whether valid url
+ */
+function isValidURL(url) {
+    try {
+        new URL(url);
+        return true;
+    }
+    catch(error) {
+        // is not a valid url
+    }
+
+    return false;
+}
+
+/**
+ * parses a media path/url
+ * @param {string} mediaId media identifier
+ * @param {string} prjId id of project
+ * @returns string parsed into an absolute path or link
+ */
+function parseMediaId(mediaId, prjId) {
+    if (!isValidURL(mediaId)) {
+        return `${baseMediaPath}${prjId}/${mediaId}`;
+    }
+    return mediaId;
 }

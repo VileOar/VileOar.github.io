@@ -67,9 +67,9 @@
     ],
     "media": {
       "thumbnail": "",
-      "cover": "https://www.youtube.com/watch?v=g1-GlmriX4E",
+      "cover": "https://www.youtube.com/embed/g1-GlmriX4E",
       "gallery": [
-        "normal.png",
+        "https://www.youtube.com/embed/g1-GlmriX4E",
         "trades.gif",
         "inventory.png",
         "factory.png",

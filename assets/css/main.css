@@ -1332,11 +1332,13 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
-.portfolio-details .portfolio-details-slider img {
+.portfolio-details .prj-cover>* {
   width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+/* .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
@@ -1350,7 +1352,7 @@ section,
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
-}
+} */
 
 .portfolio-details .project-info {
   background-color: var(--surface-color);
