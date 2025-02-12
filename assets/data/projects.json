@@ -2,14 +2,18 @@
   "yellow_sky": {
     "name": "Yellow Sky",
     "description": "Yellow Sky is a survival, resource management game in a post-apocalyptic setting. To survive in a desolate procedurally generated world, the player will need to make full use of all the scattered settlements and abandoned factories. The villages provide the player with opportunities to trade resources and complete quests, while the factories can be repaired and upgraded to produce resources.<br><br>Provided one can survive long, the factories may be upgraded into environmentally friendly versions and villages can be helped by sharing resources and restoring plant-life to their surroundings.",
+    "link": "https://luischaves.itch.io/yellow-sky",
     "metadata": {
-      "context": "Student Project",
-      "date": "October 2022",
-      "duration": "5 months",
-      "team": 4,
-      "link": "https://luischaves.itch.io/yellow-sky",
-      "engine": "Godot",
-      "format": "2D"
+      "main": [
+        ["Context", "Student Project"],
+        ["Date", "October 2022"],
+        ["Duration", "5 months"],
+        ["Team", 4]
+      ],
+      "extra": [
+        ["Engine", "Godot"],
+        ["Format", "2D"]
+      ]
     },
     "brief": [
       "Strategy survival game",
@@ -53,7 +57,7 @@
       ["Provided help with other tasks when necessary"]
     ],
     "filters": [
-      "Godot",
+      "godot",
       "2D",
       "student"
     ],

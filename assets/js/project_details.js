@@ -20,14 +20,19 @@ function fillProjectData(data, prjId) {
     document.getElementById("prj_name").innerHTML = data["name"];
     document.getElementById("prj_desc").innerHTML = data["description"];
 
+    // set link
+    document.getElementById("prj_link").innerHTML = buildLinkButton(data["link"], "Link")
+
     // set metadata
-    // TODO: get proper labels from a constants file
-    let metaDetails = data["metadata"];
+    let metadata = [];
+    for (let metaType of Object.values(data["metadata"])) {
+        metadata = metadata.concat(metaType);
+    }
     let infoElem = document.getElementById("prj_info");
-    if (metaDetails && infoElem) {
-        for (let [key, value] of Object.entries(metaDetails)) {
-            let keyStr = key;
-            let valueStr = key=="link"?`<a href="#">${value}</a>`:value;
+    if (metadata && infoElem) {
+        for (let metaEntry of metadata) {
+            let keyStr = metaEntry[0];
+            let valueStr = keyStr.toLowerCase()=="link"?`<a href="${metaEntry[1]}" target="_blank">${metaEntry[1]}</a>`:metaEntry[1];
             let elemStr = `<li><strong class="item-title">${keyStr}:</strong> ${valueStr}</li>`;
             infoElem.innerHTML += elemStr;
         }
@@ -73,7 +78,7 @@ function fillProjectData(data, prjId) {
                     first = false;
                 }
                 else {
-                    col.innerHTML += `<li>${line}</li>`;
+                    col.innerHTML += `<p class="role-item">${line}</p>`;
                 }
             }
         }
@@ -99,50 +104,4 @@ function buildGalleryItem(url) {
             </div>
         </div>
     `;
-}
-
-/**
- * build an html string from a link to image/video/...
- * @param {string} url path to image, link to video, etc.
- * @param {boolean} forceImage if true, returns an image even if media is a video
- * @returns an html element to be added to page
- */
-function buildMediaElement(url, forceImage=false) {
-    if (isValidURL(url)) { // is web content
-        if (forceImage) {
-            return `<img src="${videoProxyImg}" class="img-fluid" alt="Image">`
-        }
-        return `<iframe src="${url}" frameborder="0" allowfullscreen></iframe>`;
-    }
-    return `<img src="${url}" class="img-fluid" alt="Image">`;
-}
-
-/**
- * check if the url resolves to a valid url
- * @param {string} url path to image, link to video, etc.
- * @returns whether valid url
- */
-function isValidURL(url) {
-    try {
-        new URL(url);
-        return true;
-    }
-    catch(error) {
-        // is not a valid url
-    }
-
-    return false;
-}
-
-/**
- * parses a media path/url
- * @param {string} mediaId media identifier
- * @param {string} prjId id of project
- * @returns string parsed into an absolute path or link
- */
-function parseMediaId(mediaId, prjId) {
-    if (!isValidURL(mediaId)) {
-        return `${baseMediaPath}${prjId}/${mediaId}`;
-    }
-    return mediaId;
 }
