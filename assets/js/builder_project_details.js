@@ -56,12 +56,7 @@ function fillProjectData(data, prjId) {
         }
     }
 
-    /**
-     * Initiate glightbox
-     */
-    const glightbox = GLightbox({
-    selector: '.project-glightbox'
-    });
+    initGlightbox();
 
     // set roles and responsibilities
     let roles = data["roles"];

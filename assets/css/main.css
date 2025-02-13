@@ -1265,10 +1265,10 @@ section,
 
 .portfolio .portfolio-content {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.portfolio .portfolio-content img {
+.portfolio .portfolio-content .portfolio-thumbnail {
   transition: 0.3s;
 }
 
@@ -1329,7 +1329,7 @@ section,
   opacity: 1;
 }
 
-.portfolio .portfolio-content:hover img {
+.portfolio .portfolio-content:hover .portfolio-thumbnail {
   transform: scale(1.1);
 }
 

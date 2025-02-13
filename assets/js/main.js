@@ -165,8 +165,8 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
+  /* const glightbox = GLightbox({
     selector: '.glightbox'
-  });
+  }); */
 
 })();

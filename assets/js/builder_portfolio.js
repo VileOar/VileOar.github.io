@@ -44,13 +44,14 @@ function buildPortfolio(projectsData) {
   let portfolioDisplay = document.getElementById("custom_portfolio_display");
 
   // for every project group
-  for (let [grp, label] of Object.entries(projectGroups)) {
+  for (let [grp, _label] of Object.entries(projectGroups)) {
     let prjsInGroup = allProjects.filter((prjId) => projectsData[prjId]["_group"] === grp); // use only the projects that belong to the current group
 
     portfolioDisplay.innerHTML += buildIsotopeLayout(grp, prjsInGroup, projectsData);
   }
 
-  initIsotopes()
+  initIsotopes();
+  initGlightbox();
 }
 
 function buildIsotopeLayout(grp, prjIds, data) {
@@ -78,7 +79,6 @@ function buildIsotopeLayout(grp, prjIds, data) {
       ${finalLayout}
     </div>
   `;
-  console.log(finalLayout)
 
   return finalLayout;
 }
@@ -120,23 +120,27 @@ function buildProjectElem(grp, prjId, data, usedFilters) {
   let filterList = data[prjId]["filters"].map((str => toCSS(str)));
   usedFilters.push(...filterList); // add used filters to the list
 
-  let filterStr = ""
+  let filterStr = "";
   for (let f of filterList) {
     filterStr += FILTER_PREFIX + f + " ";
   }
 
-  let nameStr = data[prjId]["name"]
-  let thumbnailStr = parseMediaId(data[prjId]["media"]["thumbnail"], prjId)
+  let nameStr = data[prjId]["name"];
+  let thumbnailStr = parseMediaId(data[prjId]["media"]["thumbnail"], prjId);
+
+  // TODO: add attribute for date and name and alter isotope setup to allow sorting
 
   return `
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}">
       <div class="portfolio-content h-100">
-        <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
-        <div class="portfolio-info">
-          <h4>${nameStr}</h4>
-          <p>Description</p>
-          <a href="${thumbnailStr}" title="${nameStr}" data-gallery="portfolio-${grp}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-          <a href="portfolio-details.html?prj=${prjId}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+        <div class="portfolio-thumbnail">
+          <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
+          <div class="portfolio-info">
+            <h4>${nameStr}</h4>
+            <p>Description</p>
+            <a href="${thumbnailStr}" title="${nameStr}" data-gallery="portfolio-${grp}" class="project-glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html?prj=${prjId}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
         </div>
       </div>
     </div><!-- End Portfolio Item -->
