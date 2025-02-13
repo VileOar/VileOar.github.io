@@ -1,6 +1,9 @@
 const baseMediaPath = "/assets/img/projects/"; // TODO: move elsewhere
 const videoProxyImg = "/assets/img/video_thumbnail.png";
 
+/**
+ * setup function
+ */
 (function() {
     const fallback = "yellow_sky"; // fallback to yellow sky
     
@@ -13,8 +16,13 @@ const videoProxyImg = "/assets/img/video_thumbnail.png";
             prjId = (prjId in json)?prjId:fallback
             fillProjectData(json[prjId], prjId)
         });
-})()
+})();
 
+/**
+ * automatically fills the page elments wih relevant project data taken from file
+ * @param {Object} data json data for the specific project
+ * @param {String} prjId id string of project
+ */
 function fillProjectData(data, prjId) {
     // set name and description
     document.getElementById("prj_name").innerHTML = data["name"];
