@@ -1,10 +1,19 @@
-const projectDisplay = [
+const projectOrdering = [
     "batter_time",
     "yellow_sky",
     "doubble_dilemma",
     "gateway",
     "bonzios"
 ];
+
+const projectGroups = {
+    "games": "Games",
+    "it": "Computer Science/Engineering"
+}
+
+const PROJECT_PATH = "/assets/data/projects.json";
+const BASE_MEDIA_PATH = "/assets/img/projects/";
+const VIDEO_PROXY_IMG = "/assets/img/video_thumbnail.png";
 
 /**
  * build an html string from a link to image/video/...
@@ -15,7 +24,7 @@ const projectDisplay = [
 function buildMediaElement(url, forceImage=false) {
     if (isValidURL(url)) { // is web content
         if (forceImage) {
-            return `<img src="${videoProxyImg}" class="img-fluid" alt="Image">`
+            return `<img src="${VIDEO_PROXY_IMG}" class="img-fluid" alt="Image">`
         }
         return `<iframe src="${url}" frameborder="0" allowfullscreen></iframe>`;
     }
@@ -57,7 +66,7 @@ function isValidURL(url) {
  */
 function parseMediaId(mediaId, prjId) {
     if (!isValidURL(mediaId)) {
-        return `${baseMediaPath}${prjId}/${mediaId}`;
+        return `${BASE_MEDIA_PATH}${prjId}/${mediaId}`;
     }
     return mediaId;
 }

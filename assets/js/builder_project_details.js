@@ -1,6 +1,3 @@
-const baseMediaPath = "/assets/img/projects/"; // TODO: move elsewhere
-const videoProxyImg = "/assets/img/video_thumbnail.png";
-
 /**
  * setup function
  */
@@ -10,11 +7,11 @@ const videoProxyImg = "/assets/img/video_thumbnail.png";
     let params = new URLSearchParams(document.location.search);
     let prjId = params.get("prj");
 
-    fetch("/assets/data/projects.json")
+    fetch(PROJECT_PATH)
         .then((response) => response.json())
         .then((json) => {
-            prjId = (prjId in json)?prjId:fallback
-            fillProjectData(json[prjId], prjId)
+            prjId = (prjId in json)?prjId:fallback;
+            fillProjectData(json[prjId], prjId);
         });
 })();
 
