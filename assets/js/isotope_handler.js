@@ -1,7 +1,10 @@
 /**
  * Init isotope layout and filters
  */
-(function() {
+//initIsotopes(); // call on ready for any existing manual isotope layouts (DON'T DO THIS)
+
+function initIsotopes() {
+  console.log("hello")
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -54,5 +57,4 @@
       });
     });
   });
-})();
-
+}

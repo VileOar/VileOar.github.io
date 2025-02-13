@@ -70,3 +70,18 @@ function parseMediaId(mediaId, prjId) {
     }
     return mediaId;
 }
+
+/**
+ * convert a string to a valid CSS class name
+ * @param {String} string original string
+ * @returns converted string
+ */
+function toCSS(string) {
+    return string
+        .replace(/[\s!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '-')
+        .toLowerCase();
+}
+
+function isEmptyString(string) {
+    return string.trim() === "";
+}
