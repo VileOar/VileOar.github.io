@@ -821,7 +821,7 @@ section,
   height: 100%;
   z-index: 100;
   opacity: 0;
-  transition: all ease-in-out 1.2s;
+  transition: opacity ease-in-out 1.2s;
   top: 0;
   left: 0;
   right: 0;
@@ -920,6 +920,11 @@ section,
   height: 10px;
   transition: 0.9s;
   background-color: var(--accent-color);
+}
+
+.skills .skillset {
+  padding: 40px;
+  background-color: var(--contrast-color);
 }
 
 /*--------------------------------------------------------------
