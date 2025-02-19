@@ -4,7 +4,6 @@
 //initIsotopes(); // call on ready for any existing manual isotope layouts (DON'T DO THIS)
 
 function initIsotopes() {
-  console.log("hello")
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -32,17 +31,17 @@ function initIsotopes() {
           filterGroup.querySelectorAll('.filter-active').forEach(function(otherFilter) {
             otherFilter.classList.remove('filter-active');
           });
-          if (!wasActive) { // if the current one was not active before, make it active now
+          if (wasActive) { // if the current one was active, it means it has been deactivated, so activate the default filter
+            filterGroup.querySelector('.default-filter').classList.add('filter-active');
+          }
+          else { // if the current one was not active before, make it active now
             this.classList.add('filter-active');
-          } // otherwise it was active, so it should be toggled off (which it was already in the block before)
+          }
 
           // collect information about all active filters of this isotope layout
           let filterStr = "";
-          isotopeItem.querySelectorAll('.isotope-filters .filter-active').forEach(function(fil, ix, lst) {
+          isotopeItem.querySelectorAll('.isotope-filters .filter-active').forEach(function(fil) {
             filterStr += fil.getAttribute('data-filter');
-            if (ix != lst.length-1) {
-              filterStr += ", "; // do not add a comma if last element
-            }
           });
 
           // apply filters

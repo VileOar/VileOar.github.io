@@ -3,7 +3,8 @@ const projectOrdering = [
     "yellow_sky",
     "doubble_dilemma",
     "gateway",
-    "bonzios"
+    "bonzios",
+    "test"
 ];
 
 const projectGroups = {

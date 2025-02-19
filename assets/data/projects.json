@@ -9,7 +9,7 @@
       "main": [
         ["Context", "Student Project"],
         ["Date", "October 2022"],
-        ["Duration", "5 months"],
+        ["Duration", "4 months"],
         ["Team", 4]
       ],
       "extra": [
@@ -85,6 +85,128 @@
     }
   },
   "batter_time": {
-    "_enabled": false
+    "_group": "games",
+    "_enabled": true,
+    "name": "A Batter of Time: the egg tart journey",
+    "description": "",
+    "link": "https://knifetricks.itch.io/a-batter-of-time",
+    "metadata": {
+      "main": [
+        ["Context", "Student Project"],
+        ["Date", "March 2023"],
+        ["Duration", "4 months"],
+        ["Team", 5]
+      ],
+      "extra": [
+        ["Engine", "Unity"],
+        ["Format", "3D"]
+      ]
+    },
+    "brief": [
+      "Cooking and Management",
+      "Customer Service",
+      "Resource Management",
+      "Made in Unity"
+    ],
+    "overview": [
+      "Game Designer",
+      "Systems Designer and Programmer (inventory, cooking mechanics, game event scheduling, day/night cycle, save system, etc.)",
+      "Designed and implemented shops and commerce mechanics",
+      "Modelled all game characters",
+      "Provided help with other tasks when necessary"
+    ],
+    "roles": [
+      [
+        "Game Designer",
+        "Helped design the main gameplay loop, specifically daily cycle and cooking, inventory and commerce mechanics"
+      ],
+      [
+        "Systems Designer and Programmer",
+        "Designed and implemented core systems, such as inventory, cooking, event scheduling, game state management and save system",
+        "Responsible for day/night effects"
+      ],
+      [
+        "3D Artist",
+        "Created all character models"
+      ],
+      ["Provided help with other tasks when necessary"]
+    ],
+    "filters": [
+      "unity",
+      "3D",
+      "student"
+    ],
+    "tags": [
+      "Systems Engineer",
+      "Gameplay Programming",
+      "3D Modelling",
+      "Character Modelling"
+    ],
+    "media": {
+      "thumbnail": "batter_time_cover.png",
+      "cover": "https://www.youtube.com/embed/ijUQZahXTic",
+      "gallery": [
+        "https://www.youtube.com/embed/GEuHxQcfucc"
+      ]
+    }
+  },
+  "gateway": {
+    "_group": "games",
+    "_enabled": true,
+    "name": "Gateway",
+    "description": "",
+    "link": "https://github.com/VileOar/RVA_Project",
+    "metadata": {
+      "main": [
+        ["Context", "Student Project"],
+        ["Date", "December 2021"],
+        ["Duration", "2 months"],
+        ["Team", 2]
+      ],
+      "extra": [
+        ["Engine", "Unity"],
+        ["Format", "VR"]
+      ]
+    },
+    "brief": [
+      
+    ],
+    "overview": [
+      
+    ],
+    "roles": [
+      
+    ],
+    "filters": [
+      "unity",
+      "ar-vr",
+      "student"
+    ],
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "batter_time_cover.png",
+      "cover": "https://www.youtube.com/embed/ijUQZahXTic",
+      "gallery": [
+        
+      ]
+    }
+  },
+  "test": {
+    "_group": "games",
+    "_enabled": true,
+    "filters": [
+      "unity",
+      "2d",
+      "professional"
+    ],
+    "media": {
+      "thumbnail": "batter_time_cover.png",
+      "cover": "https://www.youtube.com/embed/ijUQZahXTic",
+      "gallery": [
+        
+      ]
+    }
   }
 }

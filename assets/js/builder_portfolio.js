@@ -87,8 +87,14 @@ function buildFilterList(grp, usedFilters) {
   let filterListStr = ""; // defaults to nothing if there were no used filters at all
   
   // go through every filter group to check if any were used
-  for (let [filterGroup, filterItems] of Object.entries(groupFilters[grp])) {
+  // TODO: display the name of the filter group somehow
+  for (let [_filterGroup, filterItems] of Object.entries(groupFilters[grp])) {
     let filterGroupStr = "";
+
+    // add the default
+    filterGroupStr += `
+      <li class="default-filter filter-active" data-filter="">Any</li>
+    `;
 
     // filter in that filter group
     for (let filterName of filterItems) {
