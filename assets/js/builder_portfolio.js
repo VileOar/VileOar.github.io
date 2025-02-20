@@ -41,17 +41,17 @@ function buildPortfolio(projectsData) {
       .sort((prjId1, prjId2) => projectOrdering.indexOf(prjId1) - projectOrdering.indexOf(prjId2));
   
   // get element to place the isotopes
-  let portfolioDisplay = document.getElementById("custom_portfolio_display");
+  let portfolioDisplay = document.getElementById("portfolio_sections");
 
   // for every project group
-  for (let [grp, _label] of Object.entries(projectGroups)) {
+  for (let grp of Object.keys(projectGroups)) {
     let prjsInGroup = allProjects.filter((prjId) => projectsData[prjId]["_group"] === grp); // use only the projects that belong to the current group
 
     portfolioDisplay.innerHTML += buildIsotopeLayout(grp, prjsInGroup, projectsData);
   }
 
   initIsotopes();
-  initGlightbox();
+  //initGlightbox();
 }
 
 function buildIsotopeLayout(grp, prjIds, data) {
@@ -62,6 +62,7 @@ function buildIsotopeLayout(grp, prjIds, data) {
     projectElems += buildProjectElem(grp, prjId, data, usedFilters);
     
     // TODO: still in this loop, build and add to a list the hidden project div that is meant to be shown as glightbox
+    // when implemented, uncomment initGlightbox() and add glightbox class to project thumbnail
   }
   // the element that contains all projects for this group
   let isotopeContainer = isEmptyString(projectElems)?"":`
@@ -74,10 +75,22 @@ function buildIsotopeLayout(grp, prjIds, data) {
     ${buildFilterList(grp, usedFilters)}
     ${isotopeContainer}
   `;
+  // TODO: add section title div
   finalLayout = isEmptyString(finalLayout)?"":`
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-      ${finalLayout}
-    </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio-${toCSS(projectGroups[grp]["title"])}" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-subtitle">${projectGroups[grp]["subtitle"]}</div>
+        <h2>${projectGroups[grp]["title"]}</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          ${finalLayout}
+        </div>
+      </div>
+    </section><!-- /Portfolio Section -->
   `;
 
   return finalLayout;
@@ -140,15 +153,15 @@ function buildProjectElem(grp, prjId, data, usedFilters) {
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}">
       <div class="portfolio-content h-100">
         <div class="portfolio-thumbnail">
-          <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
-          <div class="portfolio-info">
-            <h4>${nameStr}</h4>
-            <p>Description</p>
-            <a href="${thumbnailStr}" title="${nameStr}" data-gallery="portfolio-${grp}" class="project-glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-            <a href="portfolio-details.html?prj=${prjId}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-          </div>
+          <a href="portfolio-details.html?prj=${prjId}" title="${nameStr}">
+            <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
+            <div class="portfolio-info">
+              <h4>${nameStr}</h4>
+              <p>Description</p>
+            </div>
+          </a>
         </div>
       </div>
     </div><!-- End Portfolio Item -->
-  `;
+  `; // add classes "project-glightbox preview-link" to activate glightbox
 }

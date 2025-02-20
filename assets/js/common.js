@@ -8,8 +8,14 @@ const projectOrdering = [
 ];
 
 const projectGroups = {
-    "games": "Games",
-    "it": "Computer Science/Engineering"
+    "games": {
+        "title": "Game Projects",
+        "subtitle": "Silly Games"
+    },
+    "it": {
+        "title": "Computer Science/Engineering",
+        "subtitle": "Other IT Stuffs"
+    }
 }
 
 const PROJECT_PATH = "/assets/data/projects.json";

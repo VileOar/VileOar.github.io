@@ -840,6 +840,28 @@ section,
   height: 100%;
 }
 
+.about .contact-list {
+  display: flex;
+  padding: 20px 0;
+}
+
+.about .contact-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.about .contact-list svg {
+  width: 50px;
+  height: 50px;
+  fill: var(--default-color);
+}
+
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -888,38 +910,16 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+.skills .icon-skill {
+  width: 40px;
+  height: 40px;
 }
 
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
+.skills .icon-skill .icon {
+  fill: var(--accent-color);
+  overflow: auto;
+  width: 100%;
+  height: auto;
 }
 
 .skills .skillset {
@@ -1306,6 +1306,10 @@ section,
   }
 }
 
+.portfolio-item {
+  display: flex;
+}
+
 .portfolio .portfolio-content {
   position: relative;
   overflow: visible;
@@ -1326,17 +1330,20 @@ section,
   inset: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
+  background: color-mix(in srgb, var(--contrast-color), transparent 60%)
+  
 }
 
 .portfolio .portfolio-content .portfolio-info h4 {
-  font-size: 14px;
-  padding: 5px 10px;
-  font-weight: 400;
+  font-size: 20px;
+  font-family: PetitaBold;
+  padding: 20px 10px;
+  font-weight: 200;
   color: #ffffff;
   display: inline-block;
+  width: 100%;
   background-color: var(--accent-color);
+  text-align: center;
 }
 
 .portfolio .portfolio-content .portfolio-info p {
@@ -1367,11 +1374,11 @@ section,
   color: var(--accent-color);
 }
 
-.portfolio .portfolio-content .portfolio-info .details-link {
+/* .portfolio .portfolio-content .portfolio-info .details-link {
   left: 50%;
   font-size: 34px;
   line-height: 0;
-}
+} */
 
 .portfolio .portfolio-content:hover .portfolio-info {
   opacity: 1;
