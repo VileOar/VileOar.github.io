@@ -2,7 +2,7 @@ const projectOrdering = [
     "batter_time",
     "yellow_sky",
     "doubble_dilemma",
-    "gateway",
+    "entryway",
     "bonzios",
     "test"
 ];

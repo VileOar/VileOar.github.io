@@ -150,12 +150,12 @@
       ]
     }
   },
-  "gateway": {
+  "entryway": {
     "_group": "games",
     "_enabled": true,
-    "name": "Gateway",
+    "name": "Entryway",
     "description": "",
-    "link": "https://github.com/VileOar/RVA_Project",
+    "link": "https://damp-squib.itch.io/entryway",
     "metadata": {
       "main": [
         ["Context", "Student Project"],
@@ -186,10 +186,15 @@
       
     ],
     "media": {
-      "thumbnail": "batter_time_cover.png",
-      "cover": "https://www.youtube.com/embed/ijUQZahXTic",
+      "thumbnail": "entryway_cover.PNG",
+      "cover": "https://www.youtube.com/embed/vbaejZhX0jU",
       "gallery": [
-        
+        "options.gif",
+        "pistol.gif",
+        "machinegun.gif",
+        "sabre.gif",
+        "bow.gif",
+        "boss.PNG"
       ]
     }
   },
