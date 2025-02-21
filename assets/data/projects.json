@@ -154,7 +154,7 @@
     "_group": "games",
     "_enabled": true,
     "name": "Entryway",
-    "description": "",
+    "description": "Entryway was created as a VR university project which resulted in an action shooter. The game is divided into two stages. First, players will follow a path automatically, surrounded by high towers, where inactive drones are hidden. At the end of that path, they'll need to fight a boss before time runs out. If successful, they'll start heading back the same way, only this time, any drones the player did not kill before will actively hunt them.<br><br> Make use of four distinct weapons to fight your way to the finish line.",
     "link": "https://damp-squib.itch.io/entryway",
     "metadata": {
       "main": [
@@ -169,13 +169,37 @@
       ]
     },
     "brief": [
-      
+      "VR First-Person Shooter",
+      "Low Poly graphics",
+      "Multiple distint weapons and controls",
+      "Made in Unity"
     ],
     "overview": [
-      
+      "Game Designer",
+      "Gameplay Programmer",
+      "Concept Artist",
+      "Setup VR controls for player and weapon interaction"
     ],
     "roles": [
-      
+      [
+        "Game Designer",
+        "Co-designed the game's core loop and concept",
+        "Designed enemies and weapons"
+      ],
+      [
+        "Gameplay Programmer",
+        "Implemented enemy behaviour and spawning",
+        "Implemented different weapons controls to accomodate both VR controls and stadard keyboard&mouse controls",
+        "Responsible for implementing the level progression and game states"
+      ],
+      [
+        "Concept Artist",
+        "Responsible for the initial drafts that guided the final game aesthetics"
+      ],
+      [
+        "Quality Assurance",
+        "Co-responsible in performing usability and quality assurance tests"
+      ]
     ],
     "filters": [
       "unity",
@@ -186,7 +210,7 @@
       
     ],
     "media": {
-      "thumbnail": "entryway_cover.PNG",
+      "thumbnail": "entryway_thumbnail.gif",
       "cover": "https://www.youtube.com/embed/vbaejZhX0jU",
       "gallery": [
         "options.gif",

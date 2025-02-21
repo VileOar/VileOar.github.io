@@ -1420,6 +1420,10 @@ section,
   flex-direction: column;
 }
 
+.portfolio-details .project-info strong {
+  color: var(--heading-color);
+}
+
 .portfolio-details .project-info h3 {
   font-size: 22px;
   font-weight: 700;
