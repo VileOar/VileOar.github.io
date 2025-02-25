@@ -616,7 +616,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 40px 0px;
+  padding: 20px 0px;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -748,15 +748,14 @@ section,
 # Global Project Classes
 --------------------------------------------------------------*/
 .thumbnail-title {
-  font-size: 20px;
+  font-size: 24px;
   font-family: PetitaBold;
-  padding: 20px 10px;
+  padding: 15px 20px;
   font-weight: 200;
   color: #ffffff;
   display: inline-block;
-  width: 100%;
   background-color: var(--accent-color);
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 
@@ -774,11 +773,17 @@ section,
   z-index: 3;
   width: 100%;
   padding: 12px 24px;
-  background-color: color-mix(in srgb, var(--contrast-color), transparent 20%)
+  background-color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+  justify-content: center;
 }
 
 .thumbnail-info .thumbnail-stat {
   margin-right: 20px;
+  color: var(--default-color);
+}
+
+.thumbnail-info .thumbnail-stat:last-child {
+  margin-right: 0px;
 }
 
 /*--------------------------------------------------------------
@@ -871,11 +876,79 @@ section,
 --------------------------------------------------------------*/
 .highlights .project-highlight {
   background-color: var(--contrast-color);
-  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+
+.highlights .project-highlight:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .highlights .row.project-highlight>* {
   padding: 0;
+}
+
+.highlights .project-highlight .highlight-details {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.highlights .project-highlight .highlight-header {
+  display: flex;
+}
+
+.highlights .project-highlight .highlight-header .thumbnail-title {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  font-size: 28px;
+}
+
+.highlights .project-highlight .highlight-header a {
+  background-color: var(--heading-color);
+  z-index: 10;
+}
+
+.highlights .project-highlight .highlight-header a:hover {
+  background-color: color-mix(in srgb, var(--heading-color), transparent 20%);
+}
+
+.highlights .project-highlight .highlight-header .icon {
+  padding: 10px;
+  float: right;
+  width: 70px;
+  height: 70px;
+  fill: var(--accent-color);
+}
+
+.highlights .project-highlight .highlight-header .icon:hover {
+  fill: color-mix(in srgb, var(--accent-color), transparent 25%);
+  transition: ease-in-out .3s;
+}
+
+.highlights .project-highlight .highlight-body {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  padding: 20px 30px;
+}
+
+.highlights .project-highlight .highlight-body .inner-title {
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--heading-color);
+  padding-left: 0;
+}
+
+.highlights .project-highlight .highlight-body .details-list {
+  padding-left: 20px;
+}
+
+.highlights .project-highlight .highlight-body .details-list>* {
+  font-size: 16px;
+  margin: 0;
+  display: list-item;
 }
 
 /*--------------------------------------------------------------
@@ -941,6 +1014,7 @@ section,
 .skills .skillset {
   padding: 40px;
   background-color: var(--contrast-color);
+  margin: 0 20px;
 }
 
 /*--------------------------------------------------------------
@@ -1324,6 +1398,12 @@ section,
 
 .portfolio-item {
   display: flex;
+}
+
+.portfolio-item .thumbnail-title {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .portfolio .portfolio-content {
