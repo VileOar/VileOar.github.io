@@ -15,7 +15,6 @@ class Header extends HTMLElement {
           <nav id="navmenu" class="navmenu">
             <ul>
               <li><a href="index.html"${(fileName == 'index.html')?activeClass:''}>Home</a></li>
-              <li><a href="about.html"${(fileName == 'about.html')?activeClass:''}>About</a></li>
               <li><a href="resume.html"${(fileName == 'resume.html')?activeClass:''}>Resume</a></li>
               <li><a href="portfolio.html"${(fileName == 'portfolio.html')?activeClass:''}>Portfolio</a></li>
               <li><a href="contact.html"${(fileName == 'contact.html')?activeClass:''}>Contact</a></li>

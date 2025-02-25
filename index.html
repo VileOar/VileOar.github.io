@@ -2,99 +2,179 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Personal Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <title>Pedro Valério</title>
+  <!-- WARNING -->
+  <!-- added via javascript (check the contents of assets/js/reusable.js) -->
 </head>
 
-<body class="index-page">
+<body class="about-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Pedro Valério</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><!-- <a href="index.html" class="active">Home</a> -->Home</li>
-          <li><!-- <a href="about.html">About</a> -->About</li>
-          <li><!-- <a href="resume.html">Resume</a> -->Resume</li>
-          <li><!-- <a href="services.html">Services</a> -->Services</li>
-          <li><!-- <a href="portfolio.html">Portfolio</a> -->Portfolio</li>
-          <li><!-- <a href="contact.html">Contact</a> -->Contact</li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
+  <custom-header></custom-header>
 
   <main class="main">
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="heading">
-        Coming Soon
+        
       </div>
     </div><!-- End Page Title -->
 
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center align-items-center">
+          <div class="col-lg-3">
+            <div class="profile-photo-holder">
+              <img src="assets/img/pfp.png" class="img-fluid profile-photo" alt="My photo SHOULD be here...">
+              <div class="secret-photo">
+                <img src="assets/img/secret.jpg" alt="My photo SHOULD be here...">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 content">
+            <h1>Pedro Valério</h1>
+            <h2>Game Developer | Computer Engineer</h2>
+            <p class="py-3">
+              Hello there! Certified Computer Engineer, Game Developer and all-time video game enthusiast here.
+              <br/>
+              <br/>
+              Learned how to code with games and for games (good ol' GameMaker 8 and RPG Maker). I went on to formally study computer engineering, but always had game design and programming as my main focus.
+              <br/>
+              Other than that, I'm also interested in digital art and drawing in general (as any programmer would, right?). Especially true for pixel art and 2D animation, but also modelling and 3D animation.
+              <br/>
+              <br/>
+              Anyway, see for yourself and explore at your leisure. You'll find mostly games and related stuff, but also other things IT.
+            </p>
+          </div>
+
+          <div class="col-lg-6 justify-content-center contact-list">
+            <a href="mailto:pmvalerio99@gmail.com" target="_blank">
+              <svg><use xlink:href="assets/img/icons.svg#icon-gmail"></use></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/pedro-valerio-dev/" target="_blank">
+              <svg><use xlink:href="assets/img/icons.svg#icon-linkedin"></use></svg>
+            </a>
+            <a href="https://github.com/VileOar" target="_blank">
+              <svg><use xlink:href="assets/img/icons.svg#icon-github"></use></svg>
+            </a>
+            <a href="https://damp-squib.itch.io/" target="_blank">
+              <svg><use xlink:href="assets/img/icons.svg#icon-itchio"></use></svg>
+            </a>
+            <a href="https://vileoar.github.io/assets/documents/resume/resume.pdf" target="_blank">
+              <svg><use xlink:href="assets/img/icons.svg#icon-curriculum"></use></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Interests Section -->
+    <section id="highlights" class="highlights section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-subtitle">Games and Stuff</div>
+        <h2>Projects Highlights</h2>
+      </div><!-- End Section Title -->
+
+      <div id="highlights_container" class="container">
+
+        <div class="row project-highlight">
+          <div class="col-lg-4">
+            <h3 class="thumbnail-title">Yellow Sky</h3>
+            <div class="thumbnail-box">
+              <img class="img-fluid" src="assets/img/projects/yellow_sky/yellow_sky_cover.gif" alt="Yellow Sky">
+              <div class="thumbnail-info">
+                <div class="thumbnail-stat">foo 4</div>
+                <div class="thumbnail-stat">foo 4 months</div>
+                <div class="thumbnail-stat">foo Godot</div>
+                <div class="thumbnail-stat">foo 2D</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <p>
+              Sample Text
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Interests Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-subtitle">Nerdy Tech Skills</div>
+        <h2>Skills</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row justify-content-between">
+          <div class="col-lg-6 skillset">
+            <h3>Programming Languages</h3>
+            <div class="row row-cols-2">
+              <div class="col">
+                <!-- <div class="icon-skill">
+                  <svg class="icon" viewbox="0 0 100 100"><use xlink:href="assets/img/icons.svg#icon-gmail"></use></svg>
+                </div> -->
+                Java
+              </div>
+              <div class="col">Python</div>
+              <div class="col">C/C++</div>
+              <div class="col">C#</div>
+              <div class="col">HTML/CSS</div>
+              <div class="col">Javascript</div>
+              <div class="col">GDScript</div>
+              <div class="col">Dart</div>
+              <div class="col">Lua</div>
+            </div>
+          </div>
+          <div class="col-lg-6 skillset">
+            <h3>Engines, Frameworks and Tools</h3>
+            <div class="row row-cols-2">
+              <div class="col">Godot</div>
+              <div class="col">Unity</div>
+              <div class="col">Blender</div>
+              <div class="col">Aseprite</div>
+              <div class="col">Flutter</div>
+              <div class="col">Pygame</div>
+              <div class="col">SDL2</div>
+              <div class="col">OpenGL/WebGL</div>
+              <div class="col">OpenCV</div>
+              <div class="col">Bootstrap</div>
+              <div class="col">Git</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
   </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <custom-footer></custom-footer>>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
+
+  <!-- Custom common js file -->
+  <script src="assets/js/common.js"></script>
+  <!-- Reusable Components JS File -->
+  <script src="assets/js/reusable.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
