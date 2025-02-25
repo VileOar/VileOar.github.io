@@ -156,7 +156,7 @@ function buildProjectElem(grp, prjId, data, usedFilters) {
           <a href="portfolio-details.html?prj=${prjId}" title="${nameStr}">
             <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
             <div class="portfolio-info">
-              <h4>${nameStr}</h4>
+              <h3 class="thumbnail-title">${nameStr}</h3>
               <p>Description</p>
             </div>
           </a>
