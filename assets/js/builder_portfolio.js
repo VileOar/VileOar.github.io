@@ -144,24 +144,11 @@ function buildProjectElem(grp, prjId, data, usedFilters) {
     filterStr += FILTER_PREFIX + f + " ";
   }
 
-  let nameStr = data[prjId]["name"];
-  let thumbnailStr = parseMediaId(data[prjId]["media"]["thumbnail"], prjId);
-
   // TODO: add attribute for date and name and alter isotope setup to allow sorting
 
   return `
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}">
-      <div class="portfolio-content h-100">
-        <div class="portfolio-thumbnail">
-          <a href="portfolio-details.html?prj=${prjId}" title="${nameStr}">
-            <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
-            <div class="portfolio-info">
-              <h3 class="thumbnail-title">${nameStr}</h3>
-              <p>Description</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      ${buildThumbnail(prjId, data, false)}
     </div><!-- End Portfolio Item -->
   `; // add classes "project-glightbox preview-link" to activate glightbox
 }

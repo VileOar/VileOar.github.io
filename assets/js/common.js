@@ -48,6 +48,28 @@ function buildLinkButton(url, display) {
     return `<a class="link-btn" href="${url}" target="_blank">${display}</a>`
 }
 
+function buildThumbnail(prjId, data, widebox=false) {
+    let nameStr = data[prjId]["name"];
+    let thumbnailStr = parseMediaId(data[prjId]["media"]["thumbnail"], prjId);
+
+    let classStr = widebox?`class="stretched-link"`:"";
+    let titleStr = widebox?"":`<h3 class="thumbnail-title">${nameStr}</h3>`;
+
+    return `
+        <a ${classStr} href="portfolio-details.html?prj=${prjId}" title="${nameStr}">
+            <div class="thumbnail-box">
+                <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
+                <div class="thumbnail-overlay">
+                    ${titleStr}
+                    <div class="thumbnail-info">
+                        <div class="thumbnail-stat" title="Duration">foo 4 months</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    `;
+}
+
 /**
  * check if the url resolves to a valid url
  * @param {string} url path to image, link to video, etc.

@@ -10,7 +10,7 @@
         ["Context", "Student Project"],
         ["Date", "October 2022"],
         ["Duration", "4 months"],
-        ["Team", 4]
+        ["Team Size", 4]
       ],
       "extra": [
         ["Engine", "Godot"],
@@ -96,7 +96,7 @@
         ["Context", "Student Project"],
         ["Date", "March 2023"],
         ["Duration", "4 months"],
-        ["Team", 5]
+        ["Team Size", 5]
       ],
       "extra": [
         ["Engine", "Unity"],
@@ -163,7 +163,7 @@
         ["Context", "Student Project"],
         ["Date", "December 2021"],
         ["Duration", "2 months"],
-        ["Team", 2]
+        ["Team Size", 2]
       ],
       "extra": [
         ["Engine", "Unity"],
