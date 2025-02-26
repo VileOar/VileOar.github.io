@@ -1,3 +1,13 @@
+const metadataOrder = [
+    "context",
+    "date",
+    "duration",
+    "team",
+    "engine",
+    "tools",
+    "format",
+];
+
 /**
  * setup function
  */
@@ -26,21 +36,20 @@ function fillProjectData(data) {
     document.getElementById("prj_name").innerHTML = data["name"];
     document.getElementById("prj_desc").innerHTML = data["description"];
 
-    // set link
-    document.getElementById("prj_link").innerHTML = buildLinkButton(data["link"], "Link")
-
     // set metadata
-    let metadata = [];
-    for (let metaType of Object.values(data["metadata"])) {
-        metadata = metadata.concat(metaType);
-    }
+    let metadata = data["metadata"];
+
+    // set link
+    document.getElementById("prj_link").innerHTML = buildLinkButton(metadata["link"], "Link")
+
     let infoElem = document.getElementById("prj_info");
     if (metadata && infoElem) {
-        for (let metaEntry of metadata) {
-            let keyStr = metaEntry[0];
-            let valueStr = keyStr.toLowerCase()=="link"?`<a href="${metaEntry[1]}" target="_blank">${metaEntry[1]}</a>`:metaEntry[1];
-            let elemStr = `<li><strong class="item-title">${keyStr}:</strong> ${valueStr}</li>`;
-            infoElem.innerHTML += elemStr;
+        for (let key of metadataOrder) {
+            if (key in metadata) {
+                let [keyStr, valueStr] = formatDataKeyValue(key, metadata[key]);
+                let elemStr = `<li><strong class="item-title">${keyStr}:</strong> ${valueStr}</li>`;
+                infoElem.innerHTML += elemStr;
+            }
         }
     }
 

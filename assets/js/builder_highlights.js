@@ -28,13 +28,11 @@ function buildHighlights(projectsData) {
 
 function buildSingleProject(pData) {
   let pTitle = pData["name"];
-  let pDate = "TODO:";
+  let pDate = pData["metadata"]["date"];
   let pLink = pData["link"];
 
   let pSummary = buildProjectDetails(pData["brief"]);
   let pContributions = buildProjectDetails(pData["overview"]);
-
-  // TODO: use buildThumbnail from common.js
 
   return `
     <div class="row project-highlight position-relative">
@@ -44,7 +42,7 @@ function buildSingleProject(pData) {
       <div class="col-lg-8">
         <div class="highlight-details">
           <div class="highlight-header">
-            <h3 class="thumbnail-title">${pTitle + ' (' + pDate + ')'}</h3>
+            <h3 class="thumbnail-title">${pTitle}&nbsp;<em>(${pDate})</em></h3>
             <a href="${pLink} target="_blank">
               <svg class="icon">
                 <use xlink:href="assets/icons/icons.svg#icon-external-link"></use>

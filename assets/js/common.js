@@ -18,6 +18,41 @@ const projectGroups = {
     }
 }
 
+const metadataFormatting = {
+    "link": {
+        "label": "Link",
+        "icon": "",
+    },
+    "context": {
+        "label": "Context",
+        "icon": "",
+    },
+    "date": {
+        "label": "Date",
+        "icon": "",
+    },
+    "duration": {
+        "label": "Duration",
+        "icon": "",
+    },
+    "team": {
+        "label": "Team Size",
+        "icon": "",
+    },
+    "engine": {
+        "label": "Engine",
+        "icon": "",
+    },
+    "tools": {
+        "label": "Tools/Framework",
+        "icon": "", // TODO: same as 'engine'
+    },
+    "format": {
+        "label": "Format",
+        "icon": "",
+    },
+}
+
 const PROJECT_PATH = "/assets/data/projects.json";
 const BASE_MEDIA_PATH = "/assets/img/projects/";
 const VIDEO_PROXY_IMG = "/assets/img/video_thumbnail.png";
@@ -55,11 +90,27 @@ function buildLinkButton(url, display) {
  * @returns html element string
  */
 function buildThumbnail(pData, widebox=false) {
+    let thumbnailMetadata = [
+        "team",
+        "duration",
+        "engine",
+        "tools",
+        "format"
+    ];
+
     let nameStr = pData["name"];
     let thumbnailStr = parseMediaId(pData["media"]["thumbnail"], pData["_id"]);
 
     let classStr = widebox?`class="stretched-link"`:"";
     let titleStr = widebox?"":`<h3 class="thumbnail-title">${nameStr}</h3>`;
+
+    let statListStr = "";
+    for (key of thumbnailMetadata) {
+        if (key in pData["metadata"]) {
+            let [keyStr, valueStr] = formatDataKeyValue(key, pData["metadata"][key]);
+            statListStr += `<div class="thumbnail-stat" title="${keyStr}">foo ${valueStr}</div>` // TODO: change to add an icon with a tooltip
+        }
+    }
 
     return `
         <a ${classStr} href="portfolio-details.html?prj=${pData["_id"]}" title="${nameStr}">
@@ -68,7 +119,7 @@ function buildThumbnail(pData, widebox=false) {
                 <div class="thumbnail-overlay">
                     ${titleStr}
                     <div class="thumbnail-info">
-                        <div class="thumbnail-stat" title="Duration">foo 4 months</div>
+                        ${statListStr}
                     </div>
                 </div>
             </div>
@@ -104,6 +155,21 @@ function parseMediaId(mediaId, prjId) {
         return `${BASE_MEDIA_PATH}${prjId}/${mediaId}`;
     }
     return mediaId;
+}
+
+/**
+ * do any processing if necessary to both key and value and return them in a display-ready format
+ * @param {String} key the key of the metadata entry
+ * @param {*} value the value of the metadata entry
+ * @returns array with both key and value formatted correctly
+ */
+function formatDataKeyValue(key, value) {
+    switch (key) {
+        case 'link':
+            value = `<a href="${value}" target="_blank">${value}</a>`;
+        break;
+    }
+    return [metadataFormatting[key]['label'], value];
 }
 
 /**
