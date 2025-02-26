@@ -892,6 +892,7 @@ section,
 .highlights .project-highlight {
   background-color: var(--contrast-color);
   transition: all ease-in-out 0.3s;
+  margin: 20px 0;
 }
 
 .highlights .project-highlight:hover {
@@ -900,6 +901,18 @@ section,
 
 .highlights .row.project-highlight>* {
   padding: 0;
+}
+
+.highlights .project-highlight .thumbnail-box {
+  overflow: hidden;
+}
+
+.highlights .project-highlight img {
+  transition: all ease-in-out 0.2s;
+}
+
+.highlights .project-highlight:hover img {
+  transform: scale(1.1);
 }
 
 .highlights .project-highlight .highlight-details {
@@ -945,7 +958,7 @@ section,
   position: relative;
   display: flex;
   flex-grow: 1;
-  padding: 20px 30px;
+  padding: 20px 30px 10px;
 }
 
 .highlights .project-highlight .highlight-body .inner-title {

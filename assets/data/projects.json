@@ -1,5 +1,6 @@
 {
   "yellow_sky": {
+    "_id": "yellow_sky",
     "_group": "games",
     "_enabled": true,
     "name": "Yellow Sky",
@@ -86,6 +87,7 @@
     }
   },
   "batter_time": {
+    "_id": "batter_time",
     "_group": "games",
     "_enabled": true,
     "name": "A Batter of Time: the egg tart journey",
@@ -153,6 +155,7 @@
     }
   },
   "entryway": {
+    "_id": "entryway",
     "_group": "games",
     "_enabled": true,
     "name": "Entryway",

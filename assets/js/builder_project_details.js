@@ -11,16 +11,17 @@
         .then((response) => response.json())
         .then((json) => {
             prjId = (prjId in json)?prjId:fallback;
-            fillProjectData(json[prjId], prjId);
+            fillProjectData(json[prjId]);
         });
 })();
 
 /**
  * automatically fills the page elments wih relevant project data taken from file
  * @param {Object} data json data for the specific project
- * @param {String} prjId id string of project
  */
-function fillProjectData(data, prjId) {
+function fillProjectData(data) {
+    prjId = data["_id"]
+
     // set name and description
     document.getElementById("prj_name").innerHTML = data["name"];
     document.getElementById("prj_desc").innerHTML = data["description"];

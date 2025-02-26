@@ -48,15 +48,21 @@ function buildLinkButton(url, display) {
     return `<a class="link-btn" href="${url}" target="_blank">${display}</a>`
 }
 
-function buildThumbnail(prjId, data, widebox=false) {
-    let nameStr = data[prjId]["name"];
-    let thumbnailStr = parseMediaId(data[prjId]["media"]["thumbnail"], prjId);
+/**
+ * return an element of a project thumbnail
+ * @param {Object} pData the dictionary data of the project to build
+ * @param {boolean} widebox whether this is a wide thumbnail or a small one (if wide, do not add title and make link stretched)
+ * @returns html element string
+ */
+function buildThumbnail(pData, widebox=false) {
+    let nameStr = pData["name"];
+    let thumbnailStr = parseMediaId(pData["media"]["thumbnail"], pData["_id"]);
 
     let classStr = widebox?`class="stretched-link"`:"";
     let titleStr = widebox?"":`<h3 class="thumbnail-title">${nameStr}</h3>`;
 
     return `
-        <a ${classStr} href="portfolio-details.html?prj=${prjId}" title="${nameStr}">
+        <a ${classStr} href="portfolio-details.html?prj=${pData["_id"]}" title="${nameStr}">
             <div class="thumbnail-box">
                 <img src="${thumbnailStr}" class="img-fluid" alt="${nameStr}">
                 <div class="thumbnail-overlay">

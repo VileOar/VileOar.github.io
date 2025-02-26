@@ -59,7 +59,7 @@ function buildIsotopeLayout(grp, prjIds, data) {
   
   let projectElems = "";
   for (let prjId of prjIds) {
-    projectElems += buildProjectElem(grp, prjId, data, usedFilters);
+    projectElems += buildProjectElem(data[prjId], usedFilters);
     
     // TODO: still in this loop, build and add to a list the hidden project div that is meant to be shown as glightbox
     // when implemented, uncomment initGlightbox() and add glightbox class to project thumbnail
@@ -135,8 +135,8 @@ function buildFilterList(grp, usedFilters) {
   return filterListStr;
 }
 
-function buildProjectElem(grp, prjId, data, usedFilters) {
-  let filterList = data[prjId]["filters"].map((str => toCSS(str)));
+function buildProjectElem(pData, usedFilters) {
+  let filterList = pData["filters"].map((str => toCSS(str)));
   usedFilters.push(...filterList); // add used filters to the list
 
   let filterStr = "";
@@ -148,7 +148,7 @@ function buildProjectElem(grp, prjId, data, usedFilters) {
 
   return `
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}">
-      ${buildThumbnail(prjId, data, false)}
+      ${buildThumbnail(pData, false)}
     </div><!-- End Portfolio Item -->
   `; // add classes "project-glightbox preview-link" to activate glightbox
 }
