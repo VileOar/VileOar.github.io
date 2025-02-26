@@ -3,26 +3,25 @@ class Header extends HTMLElement {
     var fileName = location.href.split("/").slice(-1)[0];
     let activeClass = ' class="active"';
     this.innerHTML = `
-      <header id="header" class="header d-flex align-items-center sticky-top">            
+      <header id="header" class="header align-items-center">            
         <div class="container-fluid container-xl position-relative d-flex flex-column align-items-center justify-content-between">
 
           <a href="index.html" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Pedro Valério</h1>
+            <img src="assets/img/banner.png" alt="">
+            <!-- <h1 class="sitename">Pedro Valério</h1> -->
           </a>
-
-          <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a href="index.html"${(fileName == 'index.html')?activeClass:''}>Home</a></li>
-              <li><a href="resume.html"${(fileName == 'resume.html')?activeClass:''}>Resume</a></li>
-              <li><a href="portfolio.html"${(fileName == 'portfolio.html')?activeClass:''}>Portfolio</a></li>
-              <li><a href="contact.html"${(fileName == 'contact.html')?activeClass:''}>Contact</a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
-
         </div>
+      </header>
+      <header class="header sticky-top">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html"${(fileName == 'index.html')?activeClass:''}>Home</a></li>
+            <li><a href="resume.html"${(fileName == 'resume.html')?activeClass:''}>Resume</a></li>
+            <li><a href="portfolio.html"${(fileName == 'portfolio.html')?activeClass:''}>Portfolio</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
       </header>
     `;
   }
