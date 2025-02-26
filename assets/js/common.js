@@ -21,35 +21,35 @@ const projectGroups = {
 const metadataFormatting = {
     "link": {
         "label": "Link",
-        "icon": "",
+        "icon": "icon-external-link",
     },
     "context": {
         "label": "Context",
-        "icon": "",
+        "icon": "icon-info",
     },
     "date": {
         "label": "Date",
-        "icon": "",
+        "icon": "icon-info",
     },
     "duration": {
         "label": "Duration",
-        "icon": "",
+        "icon": "icon-time",
     },
     "team": {
         "label": "Team Size",
-        "icon": "",
+        "icon": "icon-people",
     },
     "engine": {
         "label": "Engine",
-        "icon": "",
+        "icon": "icon-tools",
     },
     "tools": {
         "label": "Tools/Framework",
-        "icon": "", // TODO: same as 'engine'
+        "icon": "icon-tools",
     },
     "format": {
         "label": "Format",
-        "icon": "",
+        "icon": "icon-format",
     },
 }
 
@@ -108,7 +108,14 @@ function buildThumbnail(pData, widebox=false) {
     for (key of thumbnailMetadata) {
         if (key in pData["metadata"]) {
             let [keyStr, valueStr] = formatDataKeyValue(key, pData["metadata"][key]);
-            statListStr += `<div class="thumbnail-stat" title="${keyStr}">foo ${valueStr}</div>` // TODO: change to add an icon with a tooltip
+            statListStr += `
+                <div class="thumbnail-stat" title="${keyStr}">
+                    <svg viewbox="0 0 32 32" class="icon">
+                        <use xlink:href="assets/icons/icons.svg#${metadataFormatting[key]["icon"]}"></use>
+                    </svg>
+                    <p>${valueStr}</p>
+                </div>
+            `;
         }
     }
 
