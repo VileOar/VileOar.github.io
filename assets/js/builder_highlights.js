@@ -29,7 +29,7 @@ function buildHighlights(projectsData) {
 function buildSingleProject(pData) {
   let pTitle = pData["name"];
   let pDate = pData["metadata"]["date"];
-  let pLink = pData["link"];
+  let pLink = pData["metadata"]["link"];
 
   let pSummary = buildProjectDetails(pData["brief"]);
   let pContributions = buildProjectDetails(pData["overview"]);
@@ -43,7 +43,7 @@ function buildSingleProject(pData) {
         <div class="highlight-details">
           <div class="highlight-header">
             <h3 class="thumbnail-title">${pTitle}&nbsp;<em>(${pDate})</em></h3>
-            <a href="${pLink} target="_blank">
+            <a href="${pLink}" target="_blank">
               <svg class="icon">
                 <use xlink:href="assets/icons/icons.svg#icon-external-link"></use>
               </svg>
