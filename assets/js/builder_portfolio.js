@@ -109,23 +109,29 @@ function buildFilterList(grp, usedFilters) {
       <li class="default-filter filter-active" data-filter="">Any</li>
     `;
 
+    let filterCount = 0;
+
     // filter in that filter group
     for (let filterName of filterItems) {
       let simpleFilter = toCSS(filterName); // correctly format filter
       
       if (usedFilters.includes(simpleFilter)) { // only add it if it was used
+        filterCount += 1;
         filterGroupStr += `
           <li data-filter=".${FILTER_PREFIX + simpleFilter}">${filterName}</li>
         `;
       }
     }
 
-    if (!isEmptyString(filterGroupStr)) { // only complete the element if it at least one of its filters was used, otherwise don't even build this group
+    if (filterCount > 1) { // only complete the element if it at least two of its filters were used, otherwise don't even build this group
       filterGroupStr = `
         <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
           ${filterGroupStr}
         </ul><!-- End Filter Group -->
       `;
+    }
+    else {
+      filterGroupStr = "";
     }
 
     // append to final filter list

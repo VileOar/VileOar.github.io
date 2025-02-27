@@ -619,7 +619,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0px;
+  padding: 20px 0px 60px;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -1055,9 +1055,13 @@ section,
 }
 
 .skills .skillset {
-  padding: 40px;
+  padding: 40px 60px 20px;
   background-color: var(--contrast-color);
   margin: 0 20px;
+}
+
+.skills .skillset .skill-title {
+  margin-bottom: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -1402,14 +1406,13 @@ section,
 .portfolio .portfolio-filters li {
   cursor: pointer;
   display: inline-block;
-  padding: 10px 15px;
-  font-size: 18px;
+  padding: 15px 30px;
+  font-size: 20px;
   font-weight: 700;
-  margin: 0 10px;
   line-height: 1;
   margin-bottom: 5px;
   transition: all 0.2s ease-in-out;
-  border-radius: 15px/25px;
+  background-color: var(--contrast-color);
 }
 
 .portfolio .portfolio-filters li:hover {
@@ -1426,10 +1429,14 @@ section,
 
 .portfolio .portfolio-filters li:first-child {
   margin-left: 0;
+  border-top-left-radius: 15px 25px;
+  border-bottom-left-radius: 15px 25px;
 }
 
 .portfolio .portfolio-filters li:last-child {
   margin-right: 0;
+  border-top-right-radius: 15px 25px;
+  border-bottom-right-radius: 15px 25px;
 }
 
 @media (max-width: 575px) {
