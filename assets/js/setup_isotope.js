@@ -3,7 +3,7 @@
  */
 //initIsotopes(); // call on ready for any existing manual isotope layouts (DON'T DO THIS)
 
-function initIsotopes() {
+function initIsotopes(getSortData = {}) {
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -15,7 +15,8 @@ function initIsotopes() {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
-        sortBy: sort
+        sortBy: sort,
+        getSortData: getSortData
       });
     });
 
@@ -65,12 +66,16 @@ function initIsotopes() {
           });
           this.classList.add('filter-active');
 
-          /* initIsotope.arrange({
-            getSortData: {
+          let sortBy = this.getAttribute('data-sorter');
+          
+          if (sortBy === "original") { // special case
+            sortBy = 'original-order';
+          }
 
-            }
-          }); */
-          // TODO: finish
+          initIsotope.arrange({
+            sortBy: sortBy,
+            sortAscending: !(sortBy === "date")
+          });
         }, false);
       });
     });

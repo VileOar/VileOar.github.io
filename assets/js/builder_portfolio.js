@@ -33,7 +33,7 @@ const groupFilters = {
 
 // list of sorters to be displayed
 const sorterLabels = {
-  "relevance": 'Relevance',
+  "original": 'Relevance',
   "date": 'Recent',
   "name": 'Name',
 };
@@ -75,7 +75,7 @@ function buildPortfolio(projectsData) {
       .map(([key]) => [key, `[${SORTER_PREFIX + key}]`])
   ); // TODO: pass to function below
   console.log(getSortData)
-  initIsotopes();
+  initIsotopes(getSortData);
   //initGlightbox();
 }
 
@@ -86,14 +86,20 @@ function buildIsotopeLayout(grp, prjIds, data) {
   for (let prjId of prjIds) {
     projectElems += buildProjectElem(data[prjId], usedFilters);
   }
+
+  let finalLayout = "";
+
+  if (isEmptyString(projectElems)) {
+    return "";
+  }
   // the element that contains all projects for this group
-  let isotopeContainer = isEmptyString(projectElems)?"":`
+  let isotopeContainer = `
     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
       ${projectElems}
     </div>
   `;
 
-  let finalLayout = `
+  finalLayout = `
     ${buildFilterSorter(grp, usedFilters)}
     ${isotopeContainer}
   `;
@@ -124,7 +130,7 @@ function buildFilterSorter(grp, usedFilters) {
 
   let sorterList = Object.entries(sorterLabels).reduce((accumulator, [sorter, label], currentIndex) => {
     let classes = currentIndex == 0 ? "filter-active" : "";
-    return accumulator + `<li class="${classes}" data-sorter="${SORTER_PREFIX+sorter}">${label}</li>`;
+    return accumulator + `<li class="${classes}" data-sorter="${sorter}">${label}</li>`;
   }, "");
 
   let sorter = `
@@ -133,14 +139,18 @@ function buildFilterSorter(grp, usedFilters) {
     </ul><!-- End Filter Group -->
   `;
 
+  // TODO: change the filter label + filter list layout to flex container and make sure the label occupies less space
+  // TODO: put the 'Sort By' inside a <p> and center it above the sorters
+  // Style everything
+
   elemStr = `
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-7">
         <div class="row row-cols-2">
           ${filterList}
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-5">
         Sort By:
         ${sorter}
       </div>

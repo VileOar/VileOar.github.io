@@ -1415,6 +1415,10 @@ section,
   background-color: var(--contrast-color);
 }
 
+.portfolio .portfolio-filters.isotope-sorter li {
+  margin: 0px 2px;
+}
+
 .portfolio .portfolio-filters li:hover {
   color: var(--accent-color);
 }

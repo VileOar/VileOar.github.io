@@ -1,10 +1,3 @@
-const highlights = [
-  "batter_time",
-  "yellow_sky",
-  "entryway",
-  "nqueens",
-];
-
 /**
  * setup function
  */
@@ -16,7 +9,7 @@ const highlights = [
 
 function buildHighlights(projectsData) {
   let projectsElem = "";
-  for (let prjId of highlights) {
+  for (let prjId of highlightsOrder) {
     if (prjId in projectsData && projectsData[prjId]["_enabled"]) {
       projectsElem += buildSingleProject(projectsData[prjId]);
     }

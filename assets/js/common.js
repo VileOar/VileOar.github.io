@@ -1,11 +1,18 @@
 const projectOrdering = [
-    "batter_time",
     "yellow_sky",
+    "batter_time",
     "doubble_dilemma",
     "entryway",
     "bonzios",
     "test"
 ];
+
+const highlightsOrder = [
+    "yellow_sky",
+    "batter_time",
+    "entryway",
+    "nqueens",
+  ];
 
 const projectGroups = {
     "games": {
@@ -102,7 +109,7 @@ function buildThumbnail(pData, widebox=false) {
     let thumbnailStr = parseMediaId(pData["media"]["thumbnail"], pData["_id"]);
 
     let classStr = widebox?`class="stretched-link"`:"";
-    let titleStr = widebox?"":`<h3 class="thumbnail-title project-title">${nameStr}</h3>`;
+    let titleStr = widebox?"":`<h3 class="thumbnail-title project-title">${nameStr}<br><em>(${pData["metadata"]["date"]})</em></h3>`;
 
     let statListStr = "";
     for (key of thumbnailMetadata) {
