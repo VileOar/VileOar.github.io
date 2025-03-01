@@ -55,5 +55,24 @@ function initIsotopes() {
         }, false);
       });
     });
+
+    // for each sorter
+    isotopeItem.querySelectorAll('.isotope-sorter').forEach(function(sorter) {
+      sorter.querySelectorAll('li').forEach(function(sortItem) {
+        sortItem.addEventListener('click', function() {
+          sorter.querySelectorAll('.filter-active').forEach(function(otherSort) {
+            otherSort.classList.remove('filter-active');
+          });
+          this.classList.add('filter-active');
+
+          /* initIsotope.arrange({
+            getSortData: {
+
+            }
+          }); */
+          // TODO: finish
+        }, false);
+      });
+    });
   });
 }

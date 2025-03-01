@@ -12,16 +12,36 @@ const groupFilters = {
       "Unreal",
       "PyGame",
     ],
-    "Visuals": [
+    "Format": [
       "2D",
       "3D",
       "AR/VR",
     ],
   },
-  "it": {}
-}
+  "it": {
+    "Context": [
+      "Student",
+      "Personal",
+      "Professional",
+    ],
+    "Tools": [
+      "Flutter",
+      "WebGL",
+    ],
+  },
+};
+
+// list of sorters to be displayed
+const sorterLabels = {
+  "relevance": 'Relevance',
+  "date": 'Recent',
+  "name": 'Name',
+};
+// the list of sorters to add as attributes of each isotope element
+const addedSorters = ["date", "name"];
 
 const FILTER_PREFIX = 'filter-';
+const SORTER_PREFIX = 'sorter-';
 
 /**
  * setup function
@@ -50,6 +70,11 @@ function buildPortfolio(projectsData) {
     portfolioDisplay.innerHTML += buildIsotopeLayout(grp, prjsInGroup, projectsData);
   }
 
+  let getSortData = Object.fromEntries(
+    Object.entries(sorterLabels)
+      .map(([key]) => [key, `[${SORTER_PREFIX + key}]`])
+  ); // TODO: pass to function below
+  console.log(getSortData)
   initIsotopes();
   //initGlightbox();
 }
@@ -60,9 +85,6 @@ function buildIsotopeLayout(grp, prjIds, data) {
   let projectElems = "";
   for (let prjId of prjIds) {
     projectElems += buildProjectElem(data[prjId], usedFilters);
-    
-    // TODO: still in this loop, build and add to a list the hidden project div that is meant to be shown as glightbox
-    // when implemented, uncomment initGlightbox() and add glightbox class to project thumbnail
   }
   // the element that contains all projects for this group
   let isotopeContainer = isEmptyString(projectElems)?"":`
@@ -72,10 +94,10 @@ function buildIsotopeLayout(grp, prjIds, data) {
   `;
 
   let finalLayout = `
-    ${buildFilterList(grp, usedFilters)}
+    ${buildFilterSorter(grp, usedFilters)}
     ${isotopeContainer}
   `;
-  // TODO: add section title div
+
   finalLayout = isEmptyString(finalLayout)?"":`
     <!-- Portfolio Section -->
     <section id="portfolio-${toCSS(projectGroups[grp]["title"])}" class="portfolio section">
@@ -96,12 +118,43 @@ function buildIsotopeLayout(grp, prjIds, data) {
   return finalLayout;
 }
 
+function buildFilterSorter(grp, usedFilters) {
+  let elemStr = "";
+  let filterList = buildFilterList(grp, usedFilters);
+
+  let sorterList = Object.entries(sorterLabels).reduce((accumulator, [sorter, label], currentIndex) => {
+    let classes = currentIndex == 0 ? "filter-active" : "";
+    return accumulator + `<li class="${classes}" data-sorter="${SORTER_PREFIX+sorter}">${label}</li>`;
+  }, "");
+
+  let sorter = `
+    <ul class="portfolio-filters isotope-sorter" data-aos="fade-up" data-aos-delay="100">
+      ${sorterList}
+    </ul><!-- End Filter Group -->
+  `;
+
+  elemStr = `
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row row-cols-2">
+          ${filterList}
+        </div>
+      </div>
+      <div class="col-lg-4">
+        Sort By:
+        ${sorter}
+      </div>
+    </div>
+  `;
+
+  return elemStr;
+}
+
 function buildFilterList(grp, usedFilters) {
   let filterListStr = ""; // defaults to nothing if there were no used filters at all
   
   // go through every filter group to check if any were used
-  // TODO: display the name of the filter group somehow
-  for (let [_filterGroup, filterItems] of Object.entries(groupFilters[grp])) {
+  for (let [filterGroup, filterItems] of Object.entries(groupFilters[grp])) {
     let filterGroupStr = "";
 
     // add the default
@@ -125,9 +178,14 @@ function buildFilterList(grp, usedFilters) {
 
     if (filterCount > 1) { // only complete the element if it at least two of its filters were used, otherwise don't even build this group
       filterGroupStr = `
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          ${filterGroupStr}
-        </ul><!-- End Filter Group -->
+        <div class="col">
+          ${filterGroup}
+        </div>
+        <div class="col">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            ${filterGroupStr}
+          </ul><!-- End Filter Group -->
+        </div>
       `;
     }
     else {
@@ -146,14 +204,17 @@ function buildProjectElem(pData, usedFilters) {
   usedFilters.push(...filterList); // add used filters to the list
 
   let filterStr = "";
-  for (let f of filterList) {
-    filterStr += FILTER_PREFIX + f + " ";
-  }
-
-  // TODO: add attribute for date and name and alter isotope setup to allow sorting
+  filterStr = filterList.reduce((accumulator, currentValue) => {
+    return accumulator + ` ${FILTER_PREFIX}${currentValue}`; 
+  }, filterStr);
+  
+  let sorterStr = "";
+  sorterStr = addedSorters.reduce((accumulator, sorter) => {
+    return accumulator + ` ${SORTER_PREFIX + sorter}="${pData["sorters"][sorter]}"`
+  }, sorterStr);
 
   return `
-    <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}">
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}" ${sorterStr}>
       ${buildThumbnail(pData, false)}
     </div><!-- End Portfolio Item -->
   `; // add classes "project-glightbox preview-link" to activate glightbox
