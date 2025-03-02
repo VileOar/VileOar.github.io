@@ -15,9 +15,9 @@ class Header extends HTMLElement {
       <header class="header sticky-top">
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html"${(fileName == 'index.html')?activeClass:''}>Home</a></li>
-            <li><a href="resume.html"${(fileName == 'resume.html')?activeClass:''}>Resume</a></li>
-            <li><a href="portfolio.html"${(fileName == 'portfolio.html')?activeClass:''}>Portfolio</a></li>
+            <li><a href="index.html"${(fileName == 'index.html')?activeClass:''}>HOME</a></li>
+            <li><a href="portfolio.html"${(fileName == 'portfolio.html')?activeClass:''}>PORTFOLIO</a></li>
+            <li><a href="resume.html"${(fileName == 'resume.html')?activeClass:''}>RESUME</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

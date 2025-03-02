@@ -146,13 +146,13 @@ function buildFilterSorter(grp, usedFilters) {
   elemStr = `
     <div class="row">
       <div class="col-lg-7">
-        <div class="row row-cols-2">
-          ${filterList}
-        </div>
+        ${filterList}
       </div>
-      <div class="col-lg-5">
-        Sort By:
-        ${sorter}
+      <div class="col-lg-5 align-content-center">
+        <div class="sorter-list">
+          <p class="inner-title">Sort By:</p>
+          ${sorter}
+        </div>
       </div>
     </div>
   `;
@@ -188,13 +188,13 @@ function buildFilterList(grp, usedFilters) {
 
     if (filterCount > 1) { // only complete the element if it at least two of its filters were used, otherwise don't even build this group
       filterGroupStr = `
-        <div class="col">
-          ${filterGroup}
-        </div>
-        <div class="col">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            ${filterGroupStr}
-          </ul><!-- End Filter Group -->
+        <div class="filter-list">
+          <p class="inner-title">${filterGroup}</p>
+          <div>
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+              ${filterGroupStr}
+            </ul><!-- End Filter Group -->
+          </div>
         </div>
       `;
     }

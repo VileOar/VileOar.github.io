@@ -21,10 +21,31 @@
   src: url('/assets/fonts/petita/PetitaBold.ttf');
 }
 
+@font-face {
+  font-family: 'Drakolomb';
+  src: url('/assets/fonts/drakolomb/Drakolomb.otf');
+}
+
+@font-face {
+  font-family: 'EnterCommand';
+  src: url('/assets/fonts/enter_command/EnterCommand.ttf');
+}
+
+@font-face {
+  font-family: 'LastWaerk';
+  src: url('/assets/fonts/lastwaerk/Lastwaerk_black.ttf');
+}
+
+@font-face {
+  font-family: 'SadMachine';
+  src: url('/assets/fonts/sadmachine/SadMachine.ttf');
+}
+
 :root {
   --default-font: PetitaMedium, "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: PetitaBold, "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --heading-font: LastWaerk, Drakolomb, EnterCommand;
+  --wildcard-font: SadMachine, "Poppins",  sans-serif;
+  --nav-font: SadMachine, "Poppins",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -116,6 +137,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  font-weight: 300;
 }
 
 /* PHP Email Form Messages
@@ -176,7 +198,7 @@ h6 {
 .header {
   color: var(--default-color);
   background-color: var(--surface-color);
-  padding: 10px 0;
+  padding: 0 0 20px;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -233,7 +255,7 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    font-size: 18px;
+    font-size: 48px;
     padding: 0 2px;
     font-family: var(--nav-font);
     font-weight: 400;
@@ -372,7 +394,7 @@ h6 {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
-    font-size: 17px;
+    font-size: 40px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -641,8 +663,9 @@ section,
 }
 
 .section-title .section-subtitle {
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 500;
+  font-family: var(--wildcard-font);
   padding: 10px 0;
   line-height: 1px;
   margin: 0;
@@ -666,7 +689,7 @@ section,
   margin: 0;
   margin: 0;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   font-family: var(--heading-font);
 }
@@ -748,11 +771,16 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Global Project Classes
+# Global Classes
 --------------------------------------------------------------*/
+.inner-title {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+}
+
 .thumbnail-title {
   font-size: 24px;
-  font-family: PetitaBold;
+  font-family: var(--heading-font);
   padding: 15px 20px;
   font-weight: 200;
   color: var(--highlight-color);
@@ -796,6 +824,7 @@ section,
 }
 
 .thumbnail-info .thumbnail-stat {
+  font-family: var(--heading-font);
   margin-right: 20px;
   color: var(--default-color);
   z-index: 10;
@@ -821,7 +850,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .content h2 {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 24px;
 }
 
@@ -908,7 +937,7 @@ section,
 .highlights .project-highlight {
   background-color: var(--contrast-color);
   transition: all ease-in-out 0.3s;
-  margin: 60px 0;
+  margin: 0 0 60px;
 }
 
 .highlights .project-highlight:hover {
@@ -979,8 +1008,9 @@ section,
 
 .highlights .project-highlight .highlight-body .inner-title {
   line-height: 30px;
+  font-family: var(--heading-font);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 400;
   color: var(--heading-color);
   padding-left: 0;
 }
@@ -1193,10 +1223,8 @@ section,
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
-.resume .resume-title {
-  color: var(--heading-color);
-  font-size: 26px;
-  font-weight: 700;
+.resume .inner-title {
+  font-size: 32px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -1398,7 +1426,7 @@ section,
 --------------------------------------------------------------*/
 .portfolio .portfolio-filters {
   padding: 0;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 7px auto;
   list-style: none;
   text-align: center;
 }
@@ -1407,10 +1435,10 @@ section,
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;
+  font-family: var(--heading-font);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 100;
   line-height: 1;
-  margin-bottom: 5px;
   transition: all 0.2s ease-in-out;
   background-color: var(--contrast-color);
 }
@@ -1443,11 +1471,33 @@ section,
   border-bottom-right-radius: 15px 25px;
 }
 
+.portfolio .filter-list p,
+.portfolio .sorter-list p {
+  font-size: 18px;
+}
+
+.portfolio .filter-list {
+  padding: 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio .sorter-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (max-width: 575px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
     margin: 0 5px;
   }
+}
+
+.portfolio .isotope-container {
+  margin-top: 1px;
 }
 
 .portfolio-item {
