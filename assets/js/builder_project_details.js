@@ -22,6 +22,20 @@ const metadataOrder = [
         .then((json) => {
             prjId = (prjId in json)?prjId:fallback;
             fillProjectData(json[prjId]);
+
+            let bodyFile = PROJECT_BODY_PATH + prjId + ".html";
+            // fill the body section with code from another file
+            fetch(bodyFile).then((response) => {
+                if (response.ok) {
+                    response.text()
+                        .then((text) => {
+                            document.getElementById('prj_body').innerHTML = text;
+                        });
+                }
+                else {
+                    console.log("No such file")
+                }
+            });
         });
 })();
 

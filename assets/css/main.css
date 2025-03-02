@@ -937,7 +937,7 @@ section,
 .highlights .project-highlight {
   background-color: var(--contrast-color);
   transition: all ease-in-out 0.3s;
-  margin: 0 0 60px;
+  margin: 0 0 20px;
 }
 
 .highlights .project-highlight:hover {
@@ -1471,9 +1471,9 @@ section,
   border-bottom-right-radius: 15px 25px;
 }
 
-.portfolio .filter-list p,
-.portfolio .sorter-list p {
-  font-size: 18px;
+.portfolio .filter-list .inner-title,
+.portfolio .sorter-list .inner-title {
+  font-size: 24px;
 }
 
 .portfolio .filter-list {
@@ -1626,6 +1626,16 @@ section,
 
 .project-info .project-roles .role-item {
   padding-left: 20px;
+}
+
+.portfolio-details .project-features {
+  margin-top: 30px;
+}
+
+.portfolio-details .project-features .contribution-title {
+  color: var(--highlight-color);
+  font-size: 24px;
+  margin-top: 20px;
 }
 
 /*--------------------------------------------------------------

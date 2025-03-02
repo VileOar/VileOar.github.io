@@ -21,7 +21,7 @@ const projectGroups = {
     },
     "it": {
         "title": "Computer Science/Engineering",
-        "subtitle": "Other IT Stuffs"
+        "subtitle": "Other Coding (Black Magic)"
     }
 }
 
@@ -63,6 +63,7 @@ const metadataFormatting = {
 const PROJECT_PATH = "/assets/data/projects.json";
 const BASE_MEDIA_PATH = "/assets/img/projects/";
 const VIDEO_PROXY_IMG = "/assets/img/video_thumbnail.png";
+const PROJECT_BODY_PATH = "/assets/html/projects_body/"
 
 /**
  * build an html string from a link to image/video/...
