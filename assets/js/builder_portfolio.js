@@ -28,6 +28,10 @@ const groupFilters = {
       "Flutter",
       "WebGL",
     ],
+    "Field": [
+      "Computer Graphics",
+      "Mobile Development",
+    ]
   },
 };
 

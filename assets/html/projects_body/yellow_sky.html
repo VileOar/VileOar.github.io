@@ -8,7 +8,13 @@
     The resulting pipeline consisted of the following steps.
 </p>
 
-<!-- TODO: list all steps and provide explanation for each -->
+<ul>
+    <li><span class="highlighted-text">Mountain Noise Generation:</span> Using an OpenSimplex noise function, determine which tiles will be occupied by mountains.</li>
+    <li><span class="highlighted-text">Force Initial Open Area:</span> Before anything else, an initial open area in the center of the map is ensured by removing any mountain tiles in a circle. This is important to ensure the player has a sizable open area to start with.</li>
+    <li><span class="highlighted-text">Connect Open Clusters:</span> During generation, it is expected that some open areas will be completely surrounded by mountains and, therefore, inaccessible. To fix this, every empty tile is sorted into buckets, by traversing and tagging their neighbours. In the end, the center tile of each bucket is connected to the center of the biggest bucket, by removing mountain tiles in a straight line.</li>
+    <li><span class="highlighted-text">Distribute Features:</span> After determining all blocked tiles, the open tiles are used to place feature tiles, such as settlements or factories.</li>
+    <li><span class="highlighted-text">Instance Map Entities:</span> Finally, for each non-empty map tile, the appropriate entity is instanced in the respective position.</li>
+</ul>
 
 <h3 class="contribution-title">Perspective Effect</h3>
 
@@ -19,14 +25,39 @@
     To achieve this, the game grid is implemented as a normal 2d orthogonal grid of cells (later rendered as hexagonal cells). To transform this into the desired perspective, a screen shader effect is applied that warps the canvas into a trapezoid (as shown in the image below).
 </p>
 
-<!-- TODO: two images demonstrating a rectangle into a trapezoid -->
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-7">
+        <img src="/assets/img/projects/yellow_sky/perspective_diagram.png" class="img-fluid" alt="Perspective shader diagram">
+    </div>
+</div>
 
 <p>
     The resulting empty section at the top is, then, filled with a sky background (which changes according to weather).
     Finally, other entities (mountains, players, settlements, factories, ...) are drawn on top of this effect. While their graphics are not warped (to preserve their shapes), they are drawn at positions appropriate to the warped grid.
 </p>
 
-<!-- TODO: if possible, two images side by side with unwarped grid vs warped result. -->
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/yellow_sky/perspective_off.PNG" class="img-fluid" alt="Perspective distortion shader off">
+    </div>
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/yellow_sky/perspective_on.PNG" class="img-fluid" alt="Perspective distortion shader on">
+    </div>
+</div>
 
-<h3 class="contribution-title">Quest System</h3>
+<h3 class="contribution-title">Quests and Events</h3>
 <!-- TODO: explain that all quests were saved in json and done as a pool of available quests, etc. -->
+
+<p>
+    One of the game's core gameplay elements is the quest system, where the player may accept and complete quests from the settlements to get rewards and help the settlements.
+    We wanted quests to be randomised, but also to control when certain quests became available, depending on the settlement's level or type. Additionally, we wanted quests to interact with other in the map.
+    To achieved this, I designed a quest system, where every village, on generation, is assigned with a pool of possible quest ids. Each quest id maps to a json data structure, stored on file, with the data fields of the corresponding quest. These details include:
+    <ul>
+        <li><span class="highlighted-text">quest name</span></li>
+        <li><span class="highlighted-text">dialogue lines</span></li>
+        <li><span class="highlighted-text">deliver items:</span> What items need to be delivered. Null if none.</li>
+        <li><span class="highlighted-text">return items:</span> What items need to be returned to the quest giver. Null if none.</li>
+    </ul>
+    Every quest also spawns an event tile on an available tile on the map, where the player must go. This means that every quest is divided into three main stages: 1) travelling to the quest location (with or without the need to collect specified items); 2) interacting with the quest event (which may or may not give necessary quest items); 3) returning to the quest giver (with or without the need to collect specified items).
+    This system allows a basic, but satisfactory variety of possible quests, where players may need to deliver items, retrieve items, both or simply go talk to a character in a location on the map. This allowed us to create a handful of interesting different quests, by changing the dialogue and what items were needed and at which stage.
+</p>

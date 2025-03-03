@@ -39,7 +39,10 @@
       ],
       [
         "Systems Designer and Programmer",
-        "Designed and implemented core systems, such as inventory, quests, factories, weather and time",
+        "Designed and implemented core systems, such as inventory, quests, factories, weather and time"
+      ],
+      [
+        "Shader Programmer",
         "Responsible for implementing the game's perspective distortion effect"
       ],
       [
@@ -228,19 +231,77 @@
       ]
     }
   },
-  "test": {
-    "_group": "games",
+  "nqueens": {
+    "_id": "nqueens",
+    "_group": "it",
     "_enabled": false,
+    "name": "N-Queens Solver",
+    "description": "",
+    "metadata": {
+      "link": "https://luischaves.itch.io/yellow-sky",
+      "context": "Student Project",
+      "date": "November 2020",
+      "duration": "2 months",
+      "team": 2,
+      "tools": "WebGL"
+    },
+    "brief": [
+      "Visual representation of the N-Queens Problem",
+      "3D Animation",
+      "Computer Graphics",
+      "Made with WebGL",
+      "Student Project"
+    ],
+    "overview": [
+      "Project Manager",
+      "Animation Programmer",
+      "Shader Programmer",
+      "3D Programmer",
+      "UI/UX Designer"
+    ],
+    "roles": [
+      ["Project Manager"],
+      [
+        "Animation Programmer",
+        "Responsible for creating every animation"
+      ],
+      [
+        "Shader Programmer",
+        "Responsible for setting up lighting and materials"
+      ],
+      [
+        "3D Programmer",
+        "Responsible for constructing the point data for the queen and board models"
+      ],
+      [
+        "UI/UX Designer/Programmer",
+        "Responsible for handling user input",
+        "Responsible for connecting the animation flow with the algorithm and correctly displaying the necessary content"
+      ]
+    ],
     "filters": [
-      "unity",
-      "2d",
-      "professional"
+      "webgl",
+      "3D",
+      "computer-graphics",
+      "student"
+    ],
+    "sorters": {
+      "name": "nqueens",
+      "date": "2020-11"
+    },
+    "tags": [
+      
     ],
     "media": {
-      "thumbnail": "batter_time_cover.png",
-      "cover": "https://www.youtube.com/embed/ijUQZahXTic",
+      "thumbnail": "yellow_sky_cover.gif",
+      "cover": "https://www.youtube.com/embed/g1-GlmriX4E",
       "gallery": [
-        
+        "https://www.youtube.com/embed/g1-GlmriX4E",
+        "trades.gif",
+        "inventory.png",
+        "factory.png",
+        "storm.png",
+        "quests.png"
       ]
     }
   }

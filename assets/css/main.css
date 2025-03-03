@@ -773,6 +773,40 @@ section,
 /*--------------------------------------------------------------
 # Global Classes
 --------------------------------------------------------------*/
+p {
+  text-align: justify;
+  text-justify: auto;
+}
+
+.link-icon {
+  display: flex;
+}
+
+.link-icon div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  margin-right: 20px;
+}
+
+.link-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--default-color);
+}
+
+.link-icon p {
+  margin-bottom: 0px;
+}
+
+.highlighted-text {
+  color: var(--highlight-color);
+}
+
 .inner-title {
   font-family: var(--heading-font);
   color: var(--heading-color);
@@ -912,23 +946,6 @@ section,
 .about .contact-list {
   display: flex;
   margin: 40px 0;
-}
-
-.about .contact-list a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--accent-color);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  margin-right: 20px;
-}
-
-.about .contact-list svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--default-color);
 }
 
 /*--------------------------------------------------------------
@@ -1630,6 +1647,15 @@ section,
 
 .portfolio-details .project-features {
   margin-top: 30px;
+}
+
+.portfolio-details .project-features .image-holder {
+  margin: 20px 0px;
+}
+
+.portfolio-details .project-features img {
+  width: 100%;
+  height: auto;
 }
 
 .portfolio-details .project-features .contribution-title {
