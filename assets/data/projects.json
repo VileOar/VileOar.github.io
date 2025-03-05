@@ -234,11 +234,11 @@
   "nqueens": {
     "_id": "nqueens",
     "_group": "it",
-    "_enabled": false,
+    "_enabled": true,
     "name": "N-Queens Solver",
     "description": "",
     "metadata": {
-      "link": "https://luischaves.itch.io/yellow-sky",
+      "link": "https://vileoar.github.io/cv_nqueens_webgl/",
       "context": "Student Project",
       "date": "November 2020",
       "duration": "2 months",
@@ -293,15 +293,15 @@
       
     ],
     "media": {
-      "thumbnail": "yellow_sky_cover.gif",
-      "cover": "https://www.youtube.com/embed/g1-GlmriX4E",
+      "thumbnail": "nqueens_cover.gif",
+      "cover": "nqueens_cover.gif",
       "gallery": [
-        "https://www.youtube.com/embed/g1-GlmriX4E",
-        "trades.gif",
-        "inventory.png",
-        "factory.png",
-        "storm.png",
-        "quests.png"
+        "showcase.gif",
+        "loss.gif",
+        "general.png",
+        "topdown.png",
+        "large.png",
+        "skin.png"
       ]
     }
   }

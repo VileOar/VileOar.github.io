@@ -1,10 +1,10 @@
 const projectOrdering = [
     "yellow_sky",
     "batter_time",
-    "doubble_dilemma",
     "entryway",
+    "double_dilemma",
+    "nqueens",
     "bonzios",
-    "test"
 ];
 
 const highlightsOrder = [
