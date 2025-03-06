@@ -157,6 +157,77 @@
       ]
     }
   },
+  "bonzios": {
+    "_id": "bonzios",
+    "_group": "games",
+    "_enabled": true,
+    "name": "Bonzios SP 9.5",
+    "description": "",
+    "metadata": {
+      "link": "https://luischaves.itch.io/bonzios-sp-95",
+      "context": "Game Jam",
+      "date": "October 2023",
+      "duration": "3 days",
+      "team": 4,
+      "engine": "Godot",
+      "format": "2D"
+    },
+    "brief": [
+      "Simulation survival game",
+      "Arcade-like time attack",
+      "Inspired by Windows 95 aesthetics",
+      "Made in Godot",
+      "Made for the Ludum Dare 54 Game Jam"
+    ],
+    "overview": [
+      "Game Designer",
+      "Gameplay Programmer",
+      "2D Artist/Animator",
+      "UI/UX Designer"
+    ],
+    "roles": [
+      [
+        "Game Designer",
+        "As with all game jams, we all contributed to the game concept"
+      ],
+      [
+        "Gameplay Programmer",
+        "One of the lead gameplay programmers",
+        "I was of one of the two programmers implementing the core functionality of the gameplay, specifically the logic of files, deleting/spawning them and handling their special effects"
+      ],
+      [
+        "2D Artist/Animator",
+        "Responsible for the all the game pixel art graphics and animations"
+      ],
+      [
+        "UI/UX Designer",
+        "Designed and implemented the game's menus"
+      ]
+    ],
+    "filters": [
+      "godot",
+      "2D",
+      "game-jam"
+    ],
+    "sorters": {
+      "name": "bonzios sp",
+      "date": "2023-10"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "bonzios_cover.gif",
+      "cover": "https://www.youtube.com/watch?v=eOw-sDmHBoA",
+      "gallery": [
+        "gameplay1.gif",
+        "gameplay2.gif",
+        "endscreen.png",
+        "image.png",
+        "howto.PNG"
+      ]
+    }
+  },
   "entryway": {
     "_id": "entryway",
     "_group": "games",
