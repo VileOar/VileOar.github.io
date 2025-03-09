@@ -132,20 +132,7 @@ function buildFilterSorter(grp, usedFilters) {
   let elemStr = "";
   let filterList = buildFilterList(grp, usedFilters);
 
-  let sorterList = Object.entries(sorterLabels).reduce((accumulator, [sorter, label], currentIndex) => {
-    let classes = currentIndex == 0 ? "filter-active" : "";
-    return accumulator + `<li class="${classes}" data-sorter="${sorter}">${label}</li>`;
-  }, "");
-
-  let sorter = `
-    <ul class="portfolio-filters isotope-sorter" data-aos="fade-up" data-aos-delay="100">
-      ${sorterList}
-    </ul><!-- End Filter Group -->
-  `;
-
-  // TODO: change the filter label + filter list layout to flex container and make sure the label occupies less space
-  // TODO: put the 'Sort By' inside a <p> and center it above the sorters
-  // Style everything
+  let sorterList = buildSorterList();
 
   elemStr = `
     <div class="row">
@@ -154,14 +141,31 @@ function buildFilterSorter(grp, usedFilters) {
       </div>
       <div class="col-lg-5 align-content-center">
         <div class="sorter-list">
-          <p class="inner-title">Sort By:</p>
-          ${sorter}
+          <p class="toggle-btn inner-title">Sort By:</p>
+          ${sorterList}
         </div>
       </div>
     </div>
   `;
 
   return elemStr;
+}
+
+function buildSorterList() {
+  let sorterList = Object.entries(sorterLabels).reduce((accumulator, [sorter, label], currentIndex) => {
+    let classes = currentIndex == 0 ? "btn-active" : "";
+    return accumulator + `<li class="toggle-btn ${classes}" data-sorter="${sorter}">${label}</li>`;
+  }, "");
+
+  sorterList = `
+    <div>
+      <ul class="portfolio-filters isotope-sorter" data-aos="fade-up" data-aos-delay="100">
+        ${sorterList}
+      </ul><!-- End Filter Group -->
+    </div>
+  `;
+
+  return sorterList;
 }
 
 function buildFilterList(grp, usedFilters) {
@@ -173,7 +177,7 @@ function buildFilterList(grp, usedFilters) {
 
     // add the default
     filterGroupStr += `
-      <li class="default-filter filter-active" data-filter="">Any</li>
+      <li class="toggle-btn default-filter btn-active" data-filter="">Any</li>
     `;
 
     let filterCount = 0;
@@ -185,7 +189,7 @@ function buildFilterList(grp, usedFilters) {
       if (usedFilters.includes(simpleFilter)) { // only add it if it was used
         filterCount += 1;
         filterGroupStr += `
-          <li data-filter=".${FILTER_PREFIX + simpleFilter}">${filterName}</li>
+          <li class="toggle-btn" data-filter=".${FILTER_PREFIX + simpleFilter}">${filterName}</li>
         `;
       }
     }
@@ -193,7 +197,7 @@ function buildFilterList(grp, usedFilters) {
     if (filterCount > 1) { // only complete the element if it at least two of its filters were used, otherwise don't even build this group
       filterGroupStr = `
         <div class="filter-list">
-          <p class="inner-title">${filterGroup}</p>
+          <p class="toggle-btn inner-title">${filterGroup}</p>
           <div>
             <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
               ${filterGroupStr}

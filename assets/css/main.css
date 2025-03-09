@@ -807,6 +807,64 @@ p {
   color: var(--highlight-color);
 }
 
+/* TOGGLE BUTTON -- */
+.toggle-btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px 30px;
+  margin-right: 5px;
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--contrast-color);
+}
+
+.toggle-btn.inner-title {
+  background-color: transparent;
+}
+
+.toggle-btn:hover {
+  color: var(--accent-color);
+}
+
+.toggle-btn.inner-title:hover {
+  background-color: var(--heading-color);
+  color: var(--highlight-color);
+}
+
+.toggle-btn.btn-active {
+  background-color: var(--accent-color);
+}
+
+.toggle-btn.inner-title.btn-active {
+  background-color: var(--heading-color);
+  color: var(--contrast-color);
+}
+
+.toggle-btn.btn-active:hover {
+  color: var(--highlight-color);
+}
+
+.toggle-btn.inner-title.btn-active:hover {
+  background-color: var(--heading-color);
+  color: var(--highlight-color);
+}
+
+.toggle-btn:first-child {
+  margin-left: 0;
+  border-top-left-radius: 15px 25px;
+  border-bottom-left-radius: 15px 25px;
+}
+
+.toggle-btn:last-child {
+  margin-right: 0;
+  border-top-right-radius: 15px 25px;
+  border-bottom-right-radius: 15px 25px;
+}
+/* -- TOGGLE BUTTON */
+
 .inner-title {
   font-family: var(--heading-font);
   color: var(--heading-color);
@@ -1446,52 +1504,18 @@ p {
   margin: 0 auto 7px auto;
   list-style: none;
   text-align: center;
+  transition: all ease-in-out 0.3s;
 }
 
-.portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 15px 30px;
-  font-family: var(--heading-font);
-  font-size: 20px;
-  font-weight: 100;
-  line-height: 1;
-  transition: all 0.2s ease-in-out;
-  background-color: var(--contrast-color);
+/* .portfolio .portfolio-filters {
+  height: 0px;
+  overflow: hidden;
 }
 
-.portfolio .portfolio-filters.isotope-sorter li {
-  margin: 0px 2px;
-}
-
-.portfolio .portfolio-filters li:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-filters li.filter-active {
-  background-color: var(--accent-color);
-}
-
-.portfolio .portfolio-filters li.filter-active:hover {
-  color: var(--highlight-color);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-  border-top-left-radius: 15px 25px;
-  border-bottom-left-radius: 15px 25px;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-  border-top-right-radius: 15px 25px;
-  border-bottom-right-radius: 15px 25px;
-}
-
-.portfolio .filter-list .inner-title,
-.portfolio .sorter-list .inner-title {
-  font-size: 24px;
-}
+.portfolio .sorter-list:hover .portfolio-filters {
+  height: 60px;
+} */
+/* TODO: complete this to refactor the filter list */
 
 .portfolio .filter-list {
   padding: 0px 40px;
@@ -1561,22 +1585,6 @@ p {
   height: auto;
   aspect-ratio: 16/9;
 }
-
-/* .portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-} */
 
 .portfolio-details .project-info {
   background-color: var(--surface-color);

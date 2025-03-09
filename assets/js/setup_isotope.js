@@ -27,21 +27,21 @@ function initIsotopes(getSortData = {}) {
       // for each filter item in that group
       filterGroup.querySelectorAll('li').forEach(function(filterItem) {
         filterItem.addEventListener('click', function() {
-          let wasActive = this.classList.contains('filter-active');
+          let wasActive = this.classList.contains('btn-active');
           // toggle off all filters
-          filterGroup.querySelectorAll('.filter-active').forEach(function(otherFilter) {
-            otherFilter.classList.remove('filter-active');
+          filterGroup.querySelectorAll('.btn-active').forEach(function(otherFilter) {
+            otherFilter.classList.remove('btn-active');
           });
           if (wasActive) { // if the current one was active, it means it has been deactivated, so activate the default filter
-            filterGroup.querySelector('.default-filter').classList.add('filter-active');
+            filterGroup.querySelector('.default-filter').classList.add('btn-active');
           }
           else { // if the current one was not active before, make it active now
-            this.classList.add('filter-active');
+            this.classList.add('btn-active');
           }
 
           // collect information about all active filters of this isotope layout
           let filterStr = "";
-          isotopeItem.querySelectorAll('.isotope-filters .filter-active').forEach(function(fil) {
+          isotopeItem.querySelectorAll('.isotope-filters .btn-active').forEach(function(fil) {
             filterStr += fil.getAttribute('data-filter');
           });
 
@@ -61,10 +61,10 @@ function initIsotopes(getSortData = {}) {
     isotopeItem.querySelectorAll('.isotope-sorter').forEach(function(sorter) {
       sorter.querySelectorAll('li').forEach(function(sortItem) {
         sortItem.addEventListener('click', function() {
-          sorter.querySelectorAll('.filter-active').forEach(function(otherSort) {
-            otherSort.classList.remove('filter-active');
+          sorter.querySelectorAll('.btn-active').forEach(function(otherSort) {
+            otherSort.classList.remove('btn-active');
           });
-          this.classList.add('filter-active');
+          this.classList.add('btn-active');
 
           let sortBy = this.getAttribute('data-sorter');
           
