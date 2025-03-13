@@ -812,7 +812,6 @@ p {
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;
-  margin-right: 5px;
   font-family: var(--heading-font);
   font-size: 16px;
   font-weight: 100;
@@ -825,10 +824,12 @@ p {
   background-color: transparent;
 }
 
+.btn-hover:hover .toggle-btn,
 .toggle-btn:hover {
   color: var(--accent-color);
 }
 
+.btn-hover:hover .toggle-btn.inner-title,
 .toggle-btn.inner-title:hover {
   background-color: var(--heading-color);
   color: var(--highlight-color);
@@ -838,28 +839,29 @@ p {
   background-color: var(--accent-color);
 }
 
+.btn-hover.btn-active .toggle-btn.inner-title,
 .toggle-btn.inner-title.btn-active {
   background-color: var(--heading-color);
   color: var(--contrast-color);
 }
 
+.btn-hover:hover .toggle-btn.btn-active,
 .toggle-btn.btn-active:hover {
   color: var(--highlight-color);
 }
 
+.btn-hover.btn-active:hover .toggle-btn.inner-title,
 .toggle-btn.inner-title.btn-active:hover {
   background-color: var(--heading-color);
   color: var(--highlight-color);
 }
 
 .toggle-btn:first-child {
-  margin-left: 0;
   border-top-left-radius: 15px 25px;
   border-bottom-left-radius: 15px 25px;
 }
 
 .toggle-btn:last-child {
-  margin-right: 0;
   border-top-right-radius: 15px 25px;
   border-bottom-right-radius: 15px 25px;
 }
@@ -1499,39 +1501,57 @@ p {
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
+.portfolio .portfolio-taglist {
   padding: 0;
-  margin: 0 auto 7px auto;
+  margin: 0 auto 0px auto;
   list-style: none;
   text-align: center;
   transition: all ease-in-out 0.3s;
+  overflow: hidden;
+  height: 70px;
 }
 
-/* .portfolio .portfolio-filters {
+.portfolio .portfolio-taglist.taglist-hide {
+  height: 0px;
+}
+
+/* .portfolio .portfolio-taglist {
   height: 0px;
   overflow: hidden;
 }
 
-.portfolio .sorter-list:hover .portfolio-filters {
+.portfolio .sorter-list:hover .portfolio-taglist {
   height: 60px;
 } */
 /* TODO: complete this to refactor the filter list */
 
-.portfolio .filter-list {
-  padding: 0px 40px;
+.portfolio .tagctg-list {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.portfolio .sorter-list {
+.portfolio .tag-selector {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
+.portfolio .tag-selector:only-child {
+  margin: 0 auto;
+}
+
+.portfolio .tag-selector>* {
+  margin-right: 4px;
+}
+
+.portfolio .tag-selector>:last-child {
+  margin-right: 0px;
+}
+
 @media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
+  .portfolio .portfolio-taglist li {
     font-size: 14px;
     margin: 0 5px;
   }

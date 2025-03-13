@@ -46,6 +46,8 @@ const addedSorters = ["date", "name"];
 
 const FILTER_PREFIX = 'filter-';
 const SORTER_PREFIX = 'sorter-';
+const FILTERCTG_PREFIX = 'filterctg-';
+const SORTERCTG_PREFIX = 'sorterctg-';
 
 /**
  * setup function
@@ -77,9 +79,9 @@ function buildPortfolio(projectsData) {
   let getSortData = Object.fromEntries(
     Object.entries(sorterLabels)
       .map(([key]) => [key, `[${SORTER_PREFIX + key}]`])
-  ); // TODO: pass to function below
-  console.log(getSortData)
+  );
   initIsotopes(getSortData);
+  setupTagctgBtns();
   //initGlightbox();
 }
 
@@ -129,22 +131,41 @@ function buildIsotopeLayout(grp, prjIds, data) {
 }
 
 function buildFilterSorter(grp, usedFilters) {
-  let elemStr = "";
-  let filterList = buildFilterList(grp, usedFilters);
+  let usedCtgs = {}
 
+  let elemStr = "";
+  let filterList = buildFilterList(grp, usedFilters, usedCtgs);
   let sorterList = buildSorterList();
 
-  elemStr = `
-    <div class="row">
-      <div class="col-lg-7">
-        ${filterList}
+  let filterCtgStr = "";
+  for (let [key, label] of Object.entries(usedCtgs)) {
+    filterCtgStr += `
+      <div class="tag-selector btn-hover" taglist-ctg="${FILTERCTG_PREFIX + key}">
+        <p class="toggle-btn inner-title">${label}:</p>
+        <p class="toggle-btn btn-active">Any</p>
       </div>
-      <div class="col-lg-5 align-content-center">
-        <div class="sorter-list">
-          <p class="toggle-btn inner-title">Sort By:</p>
-          ${sorterList}
+    `;
+  }
+
+  elemStr = `
+    <div id="tags_btns" class="row">
+      <div class="col-lg-7">
+        <div class="tagctg-list">
+          ${filterCtgStr}
         </div>
       </div>
+      <div class="col-lg-5 align-content-center">
+        <div class="tagctg-list">
+          <div class="tag-selector btn-hover" taglist-ctg="${SORTERCTG_PREFIX}sorter">
+            <p class="toggle-btn inner-title">Sort By:</p>
+            <p class="toggle-btn btn-active">${sorterLabels["original"]}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      ${sorterList}
+      ${filterList}
     </div>
   `;
 
@@ -154,25 +175,26 @@ function buildFilterSorter(grp, usedFilters) {
 function buildSorterList() {
   let sorterList = Object.entries(sorterLabels).reduce((accumulator, [sorter, label], currentIndex) => {
     let classes = currentIndex == 0 ? "btn-active" : "";
-    return accumulator + `<li class="toggle-btn ${classes}" data-sorter="${sorter}">${label}</li>`;
+    return accumulator + `<li class="toggle-btn ${classes}" data-sorter="${sorter}">${label}</li>\n`;
   }, "");
 
   sorterList = `
-    <div>
-      <ul class="portfolio-filters isotope-sorter" data-aos="fade-up" data-aos-delay="100">
-        ${sorterList}
-      </ul><!-- End Filter Group -->
-    </div>
+    <ul taglist-ctg="${SORTERCTG_PREFIX}sorter" class="portfolio-taglist taglist-hide isotope-sorter" data-aos="fade-up" data-aos-delay="100">
+      ${sorterList}
+    </ul><!-- End Filter Group -->
   `;
 
   return sorterList;
 }
 
-function buildFilterList(grp, usedFilters) {
+function buildFilterList(grp, usedFilters, OUT_usedCtg) {
+  
   let filterListStr = ""; // defaults to nothing if there were no used filters at all
   
   // go through every filter group to check if any were used
-  for (let [filterGroup, filterItems] of Object.entries(groupFilters[grp])) {
+  for (let [filterCtg, filterItems] of Object.entries(groupFilters[grp])) {
+    let formattedCtg = toCSS(filterCtg);
+
     let filterGroupStr = "";
 
     // add the default
@@ -196,15 +218,12 @@ function buildFilterList(grp, usedFilters) {
 
     if (filterCount > 1) { // only complete the element if it at least two of its filters were used, otherwise don't even build this group
       filterGroupStr = `
-        <div class="filter-list">
-          <p class="toggle-btn inner-title">${filterGroup}</p>
-          <div>
-            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-              ${filterGroupStr}
-            </ul><!-- End Filter Group -->
-          </div>
-        </div>
+        <ul taglist-ctg="${FILTERCTG_PREFIX + formattedCtg}" class="portfolio-taglist taglist-hide isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          ${filterGroupStr}
+        </ul><!-- End Filter Group -->
       `;
+
+      Object.assign(OUT_usedCtg, {[formattedCtg]: filterCtg});
     }
     else {
       filterGroupStr = "";
@@ -217,9 +236,9 @@ function buildFilterList(grp, usedFilters) {
   return filterListStr;
 }
 
-function buildProjectElem(pData, usedFilters) {
+function buildProjectElem(pData, OUT_usedFilters) {
   let filterList = pData["filters"].map((str => toCSS(str)));
-  usedFilters.push(...filterList); // add used filters to the list
+  OUT_usedFilters.push(...filterList); // add used filters to the list
 
   let filterStr = "";
   filterStr = filterList.reduce((accumulator, currentValue) => {
@@ -235,5 +254,40 @@ function buildProjectElem(pData, usedFilters) {
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterStr}" ${sorterStr}>
       ${buildThumbnail(pData, false)}
     </div><!-- End Portfolio Item -->
-  `; // add classes "project-glightbox preview-link" to activate glightbox
+  ` // add classes "project-glightbox preview-link" to activate glightbox
+}
+
+// setup the behaviour of the tag categories buttons
+function setupTagctgBtns() {
+
+
+  // TODO: redo, not using ID (cuz then it only works for one isotope layout); instead, here, search for all layouts first use classes instead or attr
+
+  // for each isotope
+  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    // select the tag buttons div and for each tag selector div
+    isotopeItem.querySelector('#tags_btns').querySelectorAll('.tag-selector').forEach(function(tagSelector) {
+      // add event listener
+      tagSelector.addEventListener('click', function() {
+        let showhide = !tagSelector.classList.contains('btn-active'); // whether this click is hiding or showing the taglist
+  
+        isotopeItem.querySelector('#tags_btns').querySelectorAll('.tag-selector').forEach(function(other) {
+          other.classList.remove('btn-active');
+        });
+  
+        // hide all taglists by default
+        isotopeItem.querySelectorAll('.portfolio-taglist').forEach(function(taglist) {
+          taglist.classList.add('taglist-hide');
+        });
+  
+        if (showhide) {
+          tagSelector.classList.add('btn-active');
+          // if showing, then show the corresponding one
+          let ctgKey = this.getAttribute('taglist-ctg');
+          let clickedTaglist = isotopeItem.querySelector(`.portfolio-taglist[taglist-ctg="${ctgKey}"]`);
+          clickedTaglist.classList.remove('taglist-hide');
+        }
+      });
+    });
+  });
 }

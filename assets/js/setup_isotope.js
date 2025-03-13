@@ -27,17 +27,13 @@ function initIsotopes(getSortData = {}) {
       // for each filter item in that group
       filterGroup.querySelectorAll('li').forEach(function(filterItem) {
         filterItem.addEventListener('click', function() {
-          let wasActive = this.classList.contains('btn-active');
           // toggle off all filters
           filterGroup.querySelectorAll('.btn-active').forEach(function(otherFilter) {
             otherFilter.classList.remove('btn-active');
           });
-          if (wasActive) { // if the current one was active, it means it has been deactivated, so activate the default filter
-            filterGroup.querySelector('.default-filter').classList.add('btn-active');
-          }
-          else { // if the current one was not active before, make it active now
-            this.classList.add('btn-active');
-          }
+          this.classList.add('btn-active');
+          let items = isotopeItem.querySelector(`#tags_btns [taglist-ctg="${filterGroup.getAttribute('taglist-ctg')}"]`).querySelector('.toggle-btn:last-child')
+          items.innerHTML = this.innerHTML;
 
           // collect information about all active filters of this isotope layout
           let filterStr = "";
@@ -65,6 +61,8 @@ function initIsotopes(getSortData = {}) {
             otherSort.classList.remove('btn-active');
           });
           this.classList.add('btn-active');
+          let items = isotopeItem.querySelector(`#tags_btns [taglist-ctg="${sorter.getAttribute('taglist-ctg')}"]`).querySelector('.toggle-btn:last-child')
+          items.innerHTML = this.innerHTML;
 
           let sortBy = this.getAttribute('data-sorter');
           
