@@ -157,6 +157,55 @@
       ]
     }
   },
+  "double_dilemma": {
+    "_id": "double_dilemma",
+    "_group": "games",
+    "_enabled": true,
+    "name": "Double Dilemma",
+    "description": "The <a href=\"https://en.wikipedia.org/wiki/Prisoner%27s_dilemma\" target=\"_blank\">Prisoner's Dilemma</a> is a thought experiment in game theory, where two rational agents may choose to either 'cooperate' with each other or betray their partner ('defect'). This experiment tests user's willingness to either work together for mutual gain or betray each other for personal benefit.<br><br>In the traditional dilemma, cooperation always maximises the total score, while defection is always the best strategy to maximise individual score, leading to fun betrayals and counter-betrayals.<br><br>Double Dilemma is a take on the original experiment, which gives a team of two players a reason to cooperate. And that reason is playing against another team of two players! This game pits two pairs (or dyads) against each other, each one playing their own Prisioner's Dilemma in a quick-reaction timed game. In the end, the team that scores lowest will be penalised, meaning it may not be so ideal to betray all the time.",
+    "metadata": {
+      "link": "https://damp-squib.itch.io/double-dilemma",
+      "context": "Student Project",
+      "date": "January 2024",
+      "duration": "2 months",
+      "team": 1,
+      "engine": "Godot",
+      "format": "2D"
+    },
+    "brief": [
+      
+    ],
+    "overview": [
+      
+    ],
+    "roles": [
+      
+    ],
+    "filters": [
+      "godot",
+      "2D",
+      "student"
+    ],
+    "sorters": {
+      "name": "double dilemma",
+      "date": "2024-01"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "dilemma_cover.gif",
+      "cover": "https://www.youtube.com/embed/6XzGgWmxe5g",
+      "gallery": [
+        "player4.gif",
+        "player2.gif",
+        "title.PNG",
+        "matrix.PNG",
+        "end.PNG",
+        "stats.PNG"
+      ]
+    }
+  },
   "bonzios": {
     "_id": "bonzios",
     "_group": "games",
