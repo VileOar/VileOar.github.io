@@ -123,7 +123,9 @@ function buildGalleryItem(url) {
         <div class="col-2">
             <div class ="d-flex justify-content-center">
             <a class="project-glightbox" href="${url}">
-                ${buildMediaElement(url, true)}
+                <div class="gallery-img">
+                    ${buildMediaElement(url, true)}
+                </div>
             </a>
             </div>
         </div>

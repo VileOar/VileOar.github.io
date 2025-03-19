@@ -1652,6 +1652,22 @@ p {
   margin: 4px 0;
 }
 
+.portfolio-details-page .gslide-image,
+.project-gallery .gallery-img {
+  background-color: var(--contrast-color);
+}
+
+.portfolio-details-page .gslide-image img {
+  width: 960px;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+.project-gallery .gallery-img img {
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
 .project-info h2 {
   text-align: center;
   margin-bottom: 20px 0;
