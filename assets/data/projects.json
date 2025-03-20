@@ -23,13 +23,11 @@
     ],
     "overview": [
       "Project Manager",
-      "Game Designer",
-      "Systems Designer and Programmer (inventory, quests, weather, time, etc.)",
+      "Systems Designer and Programmer",
       "Lead Programmer",
       "UI/UX Designer",
       "Procedural Generation of Game World",
-      "2D Artist",
-      "Provided help with other tasks when necessary"
+      "2D Artist"
     ],
     "roles": [
       ["Project Manager"],
@@ -94,7 +92,7 @@
     "_group": "games",
     "_enabled": true,
     "name": "A Batter of Time: the egg tart journey",
-    "description": "",
+    "description": "A Batter of Time: the egg tart journey is a cooking, customer service game, with a focus on cozy and casual gameplay. As the owner of a traditional portuguese bakery, the player character must, every day, manage their bakery, cook the day's products, buy more ingredients from the neighbouring shops, all while serving the bakery's customers, engaging in conversation to get a glimpse into their lives.<br><br>Players should take their time and play at their own pace, be it engaging with the customers to learn their personal stories or simply playing their days away, managing their little bakery in the peaceful island.",
     "metadata": {
       "link": "https://knifetricks.itch.io/a-batter-of-time",
       "context": "Student Project",
@@ -113,7 +111,7 @@
     ],
     "overview": [
       "Game Designer",
-      "Systems Designer and Programmer (inventory, cooking mechanics, game event scheduling, day/night cycle, save system, etc.)",
+      "Systems Designer and Programmer",
       "Designed and implemented shops and commerce mechanics",
       "Modelled all game characters",
       "Provided help with other tasks when necessary"
@@ -173,13 +171,37 @@
       "format": "2D"
     },
     "brief": [
-      
+      "Serious Game inspired by Prisoner's Dilemma",
+      "Adjustable Gameplay",
+      "Multiplayer",
+      "Made in Godot",
+      "Student Project"
     ],
     "overview": [
-      
+      "Game Designer",
+      "Adjustable Gameplay Settings",
+      "Multiple Dyad Support",
+      "Statistics Summary"
     ],
     "roles": [
-      
+      [
+        "Game Designer",
+	      "Being a solo project, I was fully responsible for the game concept"
+      ],
+      [
+        "Adjustable Gameplay Settings",
+	      "Modify the payoffs in the payoff matrix to control the resulting points attributed to players",
+	      "Adjustable round time, number of rounds, among others"
+      ],
+      [
+        "Multiple Dyad Support",
+        "While the game allows the choice between 1 or 2 dyads, it is scallable for any number of competing dyads"
+      ],
+      [
+        "Statistics Summary",
+        "At the end of each round and at the end of all rounds, statistics are displayed as to how often each player defected, compared to how often they answered correctly",
+        "Line chart display of the evolution of player statistics"
+      ]
     ],
     "filters": [
       "godot",
@@ -211,7 +233,7 @@
     "_group": "games",
     "_enabled": true,
     "name": "Bonzios SP 9.5",
-    "description": "",
+    "description": "Bonzios SP 9.5 is a Windows XP/95 inspired game, where the player must fight a dangerous virus trying to wreck their computer. They must try to outsmart the virus deleting files and bloatware for as long as possible.<br><br>This game was made for the Ludum Dare 54 Game Jam. The theme for that was \"Limited Space\". Our team interpreted that as computer space and Bonzios was born. We were happy to find that we actually ranked fairly high in some categories, most notably, humour, which we were especially proud of.",
     "metadata": {
       "link": "https://luischaves.itch.io/bonzios-sp-95",
       "context": "Game Jam",
@@ -222,11 +244,10 @@
       "format": "2D"
     },
     "brief": [
-      "Simulation survival game",
-      "Arcade-like time attack",
-      "Inspired by Windows 95 aesthetics",
+      "Arcade style time attack game",
+      "Windows 95 Aesthetics",
       "Made in Godot",
-      "Made for the Ludum Dare 54 Game Jam"
+      "Ludum Dare 54, Theme: \"Limited Space\""
     ],
     "overview": [
       "Game Designer",
@@ -422,6 +443,148 @@
         "topdown.png",
         "large.png",
         "skin.png"
+      ]
+    }
+  },
+  "moneywiz": {
+    "_id": "moneywiz",
+    "_group": "it",
+    "_enabled": true,
+    "name": "MoneyWiz",
+    "description": "MoneyWiz is a prototype money management mobile app. It was thought as an intuitive and simple to use app, but with common features in this kind of app. Most notably, The user is able to create and manage different accounts, as well as to establish goals for each of them.<br><br>The primary objectives were the ability to create different types of expenses that the user could use later when registering a new expense. Then, expenses could be displayed, sorted by these categories and viewed in different charts. The user can also choose a time frame when viewing expenses, namely weekly and monthly.",
+    "metadata": {
+      "link": "https://github.com/moneywiz/money_wiz",
+      "context": "Student Project",
+      "date": "April 2020",
+      "duration": "2 months",
+      "team": 3,
+      "tools": "Flutter"
+    },
+    "brief": [
+      "Money Management App",
+      "Create and manage accounts and saving goals",
+      "Easily add daily expenses",
+      "Categorise recurring expenses",
+      "Display expenses in charts"
+    ],
+    "overview": [
+      "Project Manager",
+      "Mobile Development",
+      "UI Designer",
+      "Usability Tests"
+    ],
+    "roles": [
+      [
+        "Project Manager"
+      ],
+      [
+        "Programmer",
+        "Implemented the calendar views (day, week, month)",
+        "Implemented the New Expense screen",
+        "Helped implement data persistence to file"
+      ],
+      [
+        "UI Design",
+        "Responsible for designing and implementing part of the interface"
+      ],
+      [
+        "Quality Assurance and Usability",
+        "Co-responsible in performing usability and quality assurance tests",
+        "Co-responsible in defining personas, use cases and scenarios"
+      ]
+    ],
+    "filters": [
+      "flutter",
+      "student",
+      "mobile-development"
+    ],
+    "sorters": {
+      "name": "moneywiz",
+      "date": "2020-04"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "moneywiz_cover.png",
+      "cover": "moneywiz_cover.png",
+      "gallery": [
+        "daylog.png",
+        "goals.jpg",
+        "monthlog.png",
+        "monthstats.png",
+        "statistics.jpg",
+        "balance.jpg"
+      ]
+    }
+  },
+  "detimotica": {
+    "_id": "detimotica",
+    "_group": "it",
+    "_enabled": true,
+    "name": "DETImótica (Mobile App)",
+    "description": "DETImótica was a project that intended to transform the Department of Electronics, Telecomunications and Informatics (DETI) of the University of Aveiro into an intelligent and modern space, by installing various sensors across the department to monitor the environmental conditions of classrooms, corridors and other spaces. Data from this system of sensors would be available for common use, both by the department staff and the students.<br><br>However, as luck (or lack thereof) would have it, the COVID-19 pandemic happened, which meant that installing sensors in our department and testing them became impossible. Nevertheless, we had to go on, so we made a smaller prototype as a proof of concept. In the end, while we could not use the project for its intended purpose, we managed to successfully implement every functionality we had planned.<br><br>While we all equally contributed to the project and occasionally stepped into each other's work, we each had our primary role. In my case, I was tasked with developing the Mobile App, which was meant as a way to monitor the installed sensors, as well as use the alarms for each sensor, which would, then, send a notification accordingly. Of course, this app also had to take into account authentication into the system and the user's role permissions.",
+    "metadata": {
+      "link": "https://detimotica.github.io/",
+      "context": "Student Project",
+      "date": "February 2020",
+      "duration": "6 months",
+      "team": 6,
+      "tools": "Flutter"
+    },
+    "brief": [
+      "Domotics system to monitor the environmental conditions of the department",
+      "Mobile App capable of authenticating into the system",
+      "Receiving notifications, according to specified alerts",
+      "Categorise recurring expenses",
+      "View sensor data in real time"
+    ],
+    "overview": [
+      "Project Manager",
+      "Mobile Development",
+      "UI Designer",
+      "Usability Tests"
+    ],
+    "roles": [
+      [
+        "UI Designer",
+        "Responsible for designing and implementing the Mobile App's interface"
+      ],
+      [
+        "Authentication in the system",
+        "Implemented the authentication into the University of Aveiro's platform to interact with the registered sensors and user roles"
+      ],
+      [
+        "Notification System",
+        "Implemented the notification system of the app, via firebase"
+      ],
+      [
+        "Real-time sensor data visualisation",
+        "Responsible for receiving, parsing and displaying the real-time sensor data in graphs"
+      ]
+    ],
+    "filters": [
+      "flutter",
+      "student",
+      "mobile-development"
+    ],
+    "sorters": {
+      "name": "detimotica",
+      "date": "2020-02"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "detimotica_cover.png",
+      "cover": "https://www.youtube.com/embed/haGXzBnWsdA",
+      "gallery": [
+        "salas.PNG",
+        "details.PNG",
+        "data.PNG",
+        "other_data.png",
+        "notify.png",
+        "diagram.png"
       ]
     }
   }

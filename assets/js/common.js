@@ -5,6 +5,8 @@ const projectOrdering = [
     "double_dilemma",
     "nqueens",
     "bonzios",
+    "moneywiz",
+    "detimotica"
 ];
 
 const highlightsOrder = [
