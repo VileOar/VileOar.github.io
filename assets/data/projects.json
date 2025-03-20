@@ -377,7 +377,7 @@
     "_group": "it",
     "_enabled": true,
     "name": "N-Queens Solver",
-    "description": "",
+    "description": "The <a href=\"https://en.wikipedia.org/wiki/Eight_queens_puzzle\" target=\"_blank\">N-Queens Problem</a> is the problem of placing N queens on an NxN chessboard in a way so that no two queens attack each other. This project was a student project of computer graphics, in which the theme was to create a visual representation of the process of solving this problem. In the context of this project, we were restricted to using only the WebGL API.<br><br>The end result was a viewer that displays an animation of an algorithm implemented to solve this problem. This algorithm and the viewer are adjustable by a number of settings. Most prominently, the user may choose the N parameter, affecting the number of queen pieces. It can also specify a starting queen, fixing one queen in a tile on the board. Finally, the viewer displays the solving process as an animation. This animation can be sped up or paused and viewed step-by-step.",
     "metadata": {
       "link": "https://vileoar.github.io/cv_nqueens_webgl/",
       "context": "Student Project",
