@@ -151,7 +151,12 @@
       "thumbnail": "batter_time_cover.png",
       "cover": "https://www.youtube.com/embed/ijUQZahXTic",
       "gallery": [
-        "https://www.youtube.com/embed/GEuHxQcfucc"
+        "https://www.youtube.com/embed/GEuHxQcfucc",
+        "cooking.gif",
+        "shop.gif",
+        "ready.PNG",
+        "world.PNG",
+        "closed_shop.PNG"
       ]
     }
   },
