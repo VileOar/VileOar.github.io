@@ -1671,6 +1671,7 @@ p {
 .prj-cover.gallery-img img,
 .project-gallery .gallery-img img {
   height: 100%;
+  width: 100%;
   aspect-ratio: 16/9;
   object-fit: contain;
 }
