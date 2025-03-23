@@ -893,7 +893,7 @@ p {
 
 .thumbnail-box img {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   aspect-ratio: 630/500;
   object-fit: contain;
 }
@@ -1605,7 +1605,7 @@ p {
 --------------------------------------------------------------*/
 .portfolio-details .prj-cover>* {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 16/9;
 }
 
@@ -1663,12 +1663,14 @@ p {
 
 .portfolio-details-page .gslide-image img {
   width: 960px;
+  height: 100%;
   aspect-ratio: 16/9;
   object-fit: contain;
 }
 
 .prj-cover.gallery-img img,
 .project-gallery .gallery-img img {
+  height: 100%;
   aspect-ratio: 16/9;
   object-fit: contain;
 }
