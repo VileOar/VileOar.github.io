@@ -1,0 +1,107 @@
+<h2>Notable Contributions</h2>
+
+<!-- Inventory -->
+<h3 class="contribution-title">Inventory System</h3>
+
+<p>
+    One of the most complex and central systems of the game is its inventory system.
+    The inventory is used, primarily to hold either ingredients or cooked products.
+    This system was of great importance as many different types of game entities need the ability to hold items. Most notably:
+</p>
+
+<ul>
+    <li><span class="highlighted-text">The Player:</span> Needs to hold any type of item and display them in their hotbar as UI elements.</li>
+    <li><span class="highlighted-text">Storage Stations:</span> The fridge and the shop counter need to hold and display the items as 3D entities in the world, ingredients for the former, cooked products for the latter.</li>
+    <li><span class="highlighted-text">Cooking Stations:</span> Every cooking appliance the player can use needs at least 3 item slots (2 for the ingredients and 1 for the final product) to display items same as the storage stations.</li>
+    <li><span class="highlighted-text">Shops:</span> The shops need to display items in the world, same as storage units as well as display their prices as UI elements.</li>
+</ul>
+
+<p>
+    To accommodate these requirements, I designed a slot-based inventory system, attempting to follow a MVC (Model-View-Controller) approach: This system was planned as shown below:
+</p>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-7">
+        <img src="/assets/img/projects/batter_time/inventory_system_diagram.png" class="img-fluid" alt="Perspective shader diagram">
+    </div>
+</div>
+
+<h4>ItemDB</h4>
+
+<p>
+    Information about every possible item is stored in a json file which is loaded into a singleton (ItemDB) to be accessed by other classes.
+    Items are identified by their ID, which is used to retrieve other data when necessary (graphics, 3D model, cooking time, price, ...).
+    Additionally, for items that need modifiers (such as cooking quality for cooked products), this information is stored as a suffix to the string ID.
+</p>
+
+<h4>Inventory and ItemStack</h4>
+
+<p>
+    Each game object that needs to hold items contains an Inventory instance, which holds a collection of ItemStack instances.
+    The ItemStack has identifies an item ID and a quantity.
+    These classes form the Model classes of this system.
+</p>
+
+<h4>WorldInventory and Hotbar</h4>
+
+<p>
+    Finally, depending on the purpose, each game object has an appropriate Controller class to either display item models (via and ItemEntity game object) or their icons in UI (via the HotbarSlot).
+    Each of the View classes then listens for changes in their linked ItemStack to update accordingly.
+    <br><br>
+    This system also allowed a simple way to change the location of the displayed items in shops and stations.
+    This is because the ItemEntity is a normal GameObject, meaning that it can positioned via its transform in the editor like any other.
+    When loaded, the corresponding WorldInventory populates its owned ItemEntities with the appropriate 3D asset.
+</p>
+
+<!-- Time -->
+<h3 class="contribution-title">Time Management</h3>
+
+<p>
+    As we were planning the game, it became clear that this would be a heavily time-based game, with multiple factors and interactions depending on time, as shown in our planning flowchart below:
+</p>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-2">
+        <img src="/assets/img/projects/batter_time/time_events.png" class="img-fluid" alt="Perspective shader diagram">
+    </div>
+</div>
+
+<p>
+    All of these events would need to be synchronised and work in unison.
+    To this effect, I also designed a time system and event management that ensured all relevant entities were notified of significant time changes.
+    For this, I created a central TimeManager entity responsible for managing the time of day and sending global events at each significant time.
+    This was accomplished by exposing a set of UnityEvent objects which different entities should connect and listen to.
+    The interaction between the TimeManager and remaining entities was planned and implemented as shown below:
+</p>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-7">
+        <img src="/assets/img/projects/batter_time/time_management.png" class="img-fluid" alt="Perspective shader diagram">
+    </div>
+</div>
+
+<!-- 3D Models -->
+<h3 class="contribution-title">Character Modelling</h3>
+
+<p>
+    I was also responsible for creating the concept art for some of the characters, but modelling all of them. They can be separated into four main characters, including the player:
+</p>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/batter_time/characters.png" class="img-fluid" alt="Perspective shader diagram">
+    </div>
+</div>
+
+<p>
+    Additionally, I also created a series of filler NPC characters that could be created on the fly.
+    For this, I created two basic body types (one male and one female).
+    Then, I created three clothing variations and, separately, four hairstyles for each gender.
+    Another member of the group, then, created a system to randomly generate an NPC filler, selecting a gender, clothing type and hairstyle randomly and, then, colouring them accordingly.
+</p>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/batter_time/fillers.png" class="img-fluid" alt="Perspective shader diagram">
+    </div>
+</div>

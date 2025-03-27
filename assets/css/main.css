@@ -1712,8 +1712,8 @@ p {
 
 .portfolio-details .project-features .contribution-title {
   color: var(--highlight-color);
-  font-size: 24px;
-  margin-top: 20px;
+  font-size: 30px;
+  margin: 30px 0 20px;
 }
 
 /*--------------------------------------------------------------
