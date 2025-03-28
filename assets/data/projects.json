@@ -504,6 +504,85 @@
       ]
     }
   },
+  "automatic_potato": {
+    "_id": "automatic_potato",
+    "_group": "games",
+    "_enabled": true,
+    "name": "Automatic Potato",
+    "description": "Starting as a school project to test and explore game design patterns, the game Automatic Potato became a top-down shooter, where a tiny witch or cat must to protect their potion cauldron from multiple waves of spooky monsters, led by a villainous robotic tubercle. This is a simple game meant to just be a showcase of game design patterns, but which went a little beyond that. Owing to its simple origins, the game was entirely made with the PyGame framework. Also, there may or may not be a few achievements to be unlocked.",
+    "metadata": {
+      "link": "https://damp-squib.itch.io/automatic-potato",
+      "context": "Student Project",
+      "date": "November 2022",
+      "duration": "1.5 months",
+      "team": 2,
+      "engine": "PyGame",
+      "format": "2D"
+    },
+    "brief": [
+      "Top down shooter game",
+      "Fight through waves of enemies",
+      "Unlock Achievements",
+      "Made in Godot",
+      "Global Game Jam 2023, Theme: \"Roots\""
+    ],
+    "overview": [
+      "Project Manager",
+      "Game Designer",
+      "Lead Programmer",
+      "System Programmer",
+      "UI/UX Designer",
+      "2D Artist/Animator"
+    ],
+    "roles": [
+      [
+        "Project Manager"
+      ],
+      [
+        "Game Designer",
+        "I was one of the game designers behind the concept and gameplay design"
+      ],
+      [
+        "Lead Programmer",
+        "I was responsible for a major part of programming duty, with the exception of enemy behaviour"
+      ],
+      [
+        "System Programmer",
+        "I designed and implemented every major system in the game, most notably the player mechanics and input, score and health tracking, physics detection and response and achievements tracker",
+        "Since this was made in PyGame, most of these systems had to implemented almost from scratch"
+      ],
+      [
+        "UI/UX Designer",
+        "I was responsible for the game's barebones GUI, including the 'achievement unlocked' popups, with PyGame"
+      ],
+      [
+        "2D Artist/Animator",
+        "Responsible for all the game's pixel art graphics and animations"
+      ]
+    ],
+    "filters": [
+      "pygame",
+      "2D",
+      "student"
+    ],
+    "sorters": {
+      "name": "Automatic Potato",
+      "date": "2023-02"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "automatic_potato_cover.gif",
+      "cover": "automatic_potato_cover.gif",
+      "gallery": [
+        "gameplay.png",
+        "boss.png",
+        "achievements.png",
+        "enemies.gif"
+      ]
+    }
+  },
   "entryway": {
     "_id": "entryway",
     "_group": "games",

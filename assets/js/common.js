@@ -6,6 +6,7 @@ const projectOrdering = [
     "nqueens",
     "bonzios",
     "get_souped",
+    "automatic_potato",
     "beet_up",
     "moneywiz",
     "detimotica",
