@@ -1217,7 +1217,7 @@ p {
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
+/* .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
 }
@@ -1298,7 +1298,7 @@ p {
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
-}
+} */
 
 /*--------------------------------------------------------------
 # Resume Section
