@@ -1,0 +1,101 @@
+<h2>Notable Contributions</h2>
+
+<!-- Weapons -->
+<h3 class="contribution-title">Weapons</h3>
+
+<p>
+    As we were only a team of two, each of us was assigned multiple responsibilities.
+    Among my tasks, one of the most important was fully implementing player controls, as well as the behaviour and controls of each of the four weapons.
+    As we did not always have access to a VR headset to test our game, I first implemented controls and weapon functionality in a desktop mouse+keyboard environment.
+    However, this was done in a way that could be easily switched to a VR format, without too much trouble.
+    For this reason as well, the game can be played both in VR or normal mouse+keyboard (although the latter version is no longer available).
+    To achieve this, each weapon takes two reference points, corresponding to the player's right and left hands and behaves differently depending on the weapon.
+    In a non-VR setting, each weapon manually sets the positions of these reference points accordingly.
+    <br><br>
+    Moreover, my colleague implemented the settings, menu and HUD systems in a way configurable to either right-handed or left-handed players.
+    Applying this to the weapons, more than using two reference points to control the weapon, one was designed as the main hand and the other as the offhand.
+</p>
+
+<!-- Gun -->
+<h4>Pistol</h4>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/entryway/pistol.gif" class="img-fluid" alt="Pistol Weapon">
+    </div>
+</div>
+
+<p>
+    As the default weapon, the pistol is always available to the player, but is also the weakest weapon.
+    It is a one-handed weapon and, as such, the control of the weapon is directly mapped to the transform (rotation and position) of the main reference point, being either the right hand or the left hand, depending on the settings.
+    Firing this weapon is detected on the press event of the trigger button, only, meaning this weapon cannot be rapid-fired.
+</p>
+
+<!-- Machine Gun -->
+<h4>Machine Gun</h4>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/entryway/machinegun.gif" class="img-fluid" alt="Machine Gun Weapon">
+    </div>
+</div>
+
+<p>
+    The machine gun is the second weapon developed, as well as the most powerful.
+    On the other hand, it has relatively low ammo, meaning the player should conserve it for when there are multiple enemies or for the boss.
+    Being a two-handed weapon, it uses both hands to aim the weapon.
+    The machine gun Game Object always sets its position to the position of the main hand (the hand on the trigger of the model).
+    However, it sets its rotation to the same as the vector going from the main hand to the offhand.
+    This also means that the distance between the player's hands does not actually matter, as only the orientation of the vector is used.
+    Testers of the game found this weapon intuitive and easy to use.
+</p>
+
+<!-- Sabre -->
+<h4>Sabre</h4>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/entryway/sabre.gif" class="img-fluid" alt="Sabre Weapon">
+    </div>
+</div>
+
+<p>
+    The sabre is the only melee weapon of the game and was meant to be used only as a panic tool when all other weapons were out of ammo.
+    Like the pistol, it is a one-handed weapon and, as such, it's position and rotation are also directly mapped to the main hand controller.
+    To attack with this weapon, the player is meant to swing it.
+    To make it more realistic, this weapon only does damage on contact if its speed is above a certain threshold.
+    This speed is taken from the tip of the sabre model.
+    To indicate this to the player, whenever the sabre is at a speed at which it would make damage, it plays a subtle sound and its trail is also longer.
+</p>
+
+<!-- Bow -->
+<h4>Bow and Arrow</h4>
+
+<div class="row justify-content-around image-holder">
+    <div class="col-lg-5">
+        <img src="/assets/img/projects/entryway/bow.gif" class="img-fluid" alt="Bow and Arrow Weapon">
+    </div>
+</div>
+
+<p>
+    Finally, we also wanted to add a more complex weapon to further explore and experiment with VR controls.
+    We chose to add a bow and arrow weapon that requires a more complicated method of control.
+    This weapon can kill enemies in a single shot and can pierce through multiple enemies at once.
+    On the flip side, it is very difficult to use effectively.
+</p>
+
+<p>
+    <span class="highlighted-text">Normal State:</span>
+    In normal operation, the bow model follows the position of the offhand while the arrow model follows the position and rotation of the main hand.
+    In this state, the two move independently.
+    <br><br>
+    <span class="highlighted-text">Draw State:</span>
+    When the player presses the trigger button, the weapon changes and, like the machine gun, the rotation of both bow and arrow come from the vector between both hands, with the bow sitting at the position of the offhand and the arrow at the position of the main hand.
+    In this weapon, the distance between the two hands matters. If the player releases the trigger while the main hand (arrow) is in front of the offhand (bow), the attack is cancelled and the weapon goes back to normal state.
+    If the offhand is behind, mimicking the motion of drawing and arrow on a bow, when the trigger is released, the arrow is let loose.
+    The arrow travels with a starting speed proportionate to the distance between both hands when fired and is affected by gravity.
+    <br><br>
+    <span class="highlighted-text">Cooldown State:</span>
+    Once fired, for a short duration, the player is unable to fire again, indicated by the absence of an arrow on the main hand.
+    Once the cooldown timer ends, the weapons goes back to the normal state.
+</p>
