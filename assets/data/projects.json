@@ -328,27 +328,10 @@
     "overview": [
       "Game Designer",
       "Gameplay Programmer",
-      "2D Artist/Animator",
-      "UI/UX Designer"
+      "System Programmer",
+      "Game Logic"
     ],
     "roles": [
-      [
-        "Game Designer",
-        "As with all game jams, we all contributed to the game concept"
-      ],
-      [
-        "Gameplay Programmer",
-        "One of the lead gameplay programmers",
-        "I was of one of the two programmers implementing the core functionality of the gameplay, specifically the logic of files, deleting/spawning them and handling their special effects"
-      ],
-      [
-        "2D Artist/Animator",
-        "Responsible for the all the game pixel art graphics and animations"
-      ],
-      [
-        "UI/UX Designer",
-        "Designed and implemented the game's menus"
-      ],
       [
         "Game Designer",
 	      "As with all game jams, we all contributed to the game concept"
@@ -382,7 +365,7 @@
     ],
     "media": {
       "thumbnail": "get_souped_cover.gif",
-      "cover": "https://www.youtube.com/watch?v=mVTk73hcaEY",
+      "cover": "https://www.youtube.com/embed/mVTk73hcaEY",
       "gallery": [
         "gif1.gif",
         "gif2.gif",
@@ -390,6 +373,134 @@
         "img2.png",
         "img3.png",
         "img4.png"
+      ]
+    }
+  },
+  "summon_cat": {
+    "_id": "summon_cat",
+    "_group": "games",
+    "_enabled": true,
+    "name": "How to Summon a Cat (for dummies)",
+    "description": "How to Summon a Cat (for dummies) was inspired by the herculean, nigh impossible task of getting your cat to come to you. To try (and fail) to achieve this, you can throw objects that your cat might like, in the hopes that you can lure it to you. But be careful, some items, such as bananas and lemons are deeply hated by cats and may have the opposite effect.<br><br>This game was made for the Ludum Dare 55 Game Jam. The theme for that was \"Summoning\". While the first 24 hours were spent in agonising over not wanting to make a game about literal, obvious summoning, but also not having any other ideas, we, eventually came up with this concept. The idea dawned on us when we thought of summoning as in \"calling\" something and, thanks to our talented artist, we were sold on the idea of having a cute but annoying cat not coming over to you.",
+    "metadata": {
+      "link": "https://inesseni00.itch.io/how-to-summon-a-cat-for-dummies",
+      "context": "Game Jam",
+      "date": "April 2024",
+      "duration": "3 days",
+      "team": 5,
+      "engine": "Godot",
+      "format": "2D"
+    },
+    "brief": [
+      "Cute game with a cute cat",
+      "Simple mechanics and objective",
+      "Made in Godot",
+      "Ludum Dare 56, Theme: \"Summoning\""
+    ],
+    "overview": [
+      "Game Designer",
+      "Gameplay Programmer",
+      "System Programmer",
+      "Game Logic"
+    ],
+    "roles": [
+      [
+        "Game Designer",
+	      "As with all game jams, we all contributed to the game concept"
+      ],
+      [
+        "Gameplay Programmer",
+        "Responsible for implementing the cat's head and co-implementing the synchronisation between head and body, which was implemented by another team member",
+        "Responsible for the throwing mechanic of items as well as their associated physics"
+      ],
+      [
+        "Provided help with sound design and implementation"
+      ]
+    ],
+    "filters": [
+      "godot",
+      "2D",
+      "game-jam"
+    ],
+    "sorters": {
+      "name": "how to summon a cat (for dummies)",
+      "date": "2024-04"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "summon_cat_cover.png",
+      "cover": "https://www.youtube.com/embed/mnBA9odAQ1Y",
+      "gallery": [
+        "win.png",
+        "game1.png",
+        "lose.png",
+        "title.png"
+      ]
+    }
+  },
+  "beet_up": {
+    "_id": "beet_up",
+    "_group": "games",
+    "_enabled": true,
+    "name": "Beet Up: Raddish Edition",
+    "description": "Beet Up: Raddish Edition is a short arcade game where the player is tasked with saving the Beet planet from non-root vegetables from outer space! These strange and different creatures started to attack the planet, and its up to the player to prevent them from reaching the population that took refuge in the planet's core.<br><br>This game was made for the Global Game Jam 2023. The theme for that was \"Roots\". This being most of the team's first game jam, we struggled for a bit on how to use the theme. Eventually we remembered that radishes are roots. After that, we thought that we could, not only have a radish, but a RADdish and the idea sort of grew from there.",
+    "metadata": {
+      "link": "https://tgnics.itch.io/beet-up-raddish-edition",
+      "context": "Game Jam",
+      "date": "February 2023",
+      "duration": "2 days",
+      "team": 6,
+      "engine": "Godot",
+      "format": "2D"
+    },
+    "brief": [
+      "Arcade style game",
+      "Crowd Control",
+      "Made in Godot",
+      "Global Game Jam 2023, Theme: \"Roots\""
+    ],
+    "overview": [
+      "Game Designer",
+      "2D Artist/Animator",
+      "Game Programmer"
+    ],
+    "roles": [
+      [
+        "Game Designer",
+	      "As with all game jams, we all contributed to the game concept"
+      ],
+      [
+        "2D Artist/Animator",
+        "Responsible for the all the game pixel art graphics and animations, with the exception of the background"
+      ],
+      [
+        "Gameplay Programmer",
+        "While I was mostly in charge of art, I also helped a bit with programming",
+        "Implemented the root shooting ability"
+      ]
+    ],
+    "filters": [
+      "godot",
+      "2D",
+      "game-jam"
+    ],
+    "sorters": {
+      "name": "beet up raddish edition",
+      "date": "2023-02"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "beet_up_cover.png",
+      "cover": "https://www.youtube.com/embed/tfuKZj5X1DA",
+      "gallery": [
+        "world.gif",
+        "world.png",
+        "credits.png",
+        "raddish.gif"
       ]
     }
   },

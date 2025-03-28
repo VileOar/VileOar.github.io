@@ -6,8 +6,10 @@ const projectOrdering = [
     "nqueens",
     "bonzios",
     "get_souped",
+    "beet_up",
     "moneywiz",
-    "detimotica"
+    "detimotica",
+    "summon_cat"
 ];
 
 const highlightsOrder = [
