@@ -5,6 +5,7 @@ const projectOrdering = [
     "double_dilemma",
     "nqueens",
     "bonzios",
+    "get_souped",
     "moneywiz",
     "detimotica"
 ];

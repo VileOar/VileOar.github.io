@@ -303,6 +303,96 @@
       ]
     }
   },
+  "get_souped": {
+    "_id": "get_souped",
+    "_group": "games",
+    "_enabled": true,
+    "name": "Get Souped!",
+    "description": "Get souped is a 2D/3D mix arcade-like game, where the player plays as Godzilla trying to lead helpless residents of a city to a place where he can turn them into soup to eat. Y'know, as Godzilla is know to do. Oh, also, Godzilla is really picky about food, so he must avoid accidentally leading any of the infected green citizens roaming about, before they infect the healthy ones. Also remember to smash a few buildings along the way.<br><br>This game was made for the Ludum Dare 56 Game Jam. The theme for that was \"Tiny Creatures\". The idea evolved multiple times, until we ended up with a weird mix of many versions, creating Get Souped. We had a bigger team which allowed us to add a few fun features, such as the interaction between a 3D game world with 2D characters and entertaining visuals and audio. We were very happy with the final result as other users also found the game, although very challenging, very fun to play.",
+    "metadata": {
+      "link": "https://luischaves.itch.io/get-souped",
+      "context": "Game Jam",
+      "date": "October 2024",
+      "duration": "3 days",
+      "team": 6,
+      "engine": "Godot",
+      "format": "3D"
+    },
+    "brief": [
+      "Arcade style time attack game",
+      "Seamless mix of 2D and 3D elements",
+      "Sketchy, hand-drawn art style",
+      "Made in Godot",
+      "Ludum Dare 56, Theme: \"Tiny Creatures\""
+    ],
+    "overview": [
+      "Game Designer",
+      "Gameplay Programmer",
+      "2D Artist/Animator",
+      "UI/UX Designer"
+    ],
+    "roles": [
+      [
+        "Game Designer",
+        "As with all game jams, we all contributed to the game concept"
+      ],
+      [
+        "Gameplay Programmer",
+        "One of the lead gameplay programmers",
+        "I was of one of the two programmers implementing the core functionality of the gameplay, specifically the logic of files, deleting/spawning them and handling their special effects"
+      ],
+      [
+        "2D Artist/Animator",
+        "Responsible for the all the game pixel art graphics and animations"
+      ],
+      [
+        "UI/UX Designer",
+        "Designed and implemented the game's menus"
+      ],
+      [
+        "Game Designer",
+	      "As with all game jams, we all contributed to the game concept"
+      ],
+      [
+        "Gameplay Programmer",
+        "One of the lead gameplay programmers",
+        "Implemented entity behaviour, with a custom Stack State Machine based AI behaviour"
+      ],
+      [
+        "System Programmer",
+        "I was responsible for setting up the interaction between 2D and 3D elements on a lower level, so that another team member could handle synchronisation of 2D and 3D cameras"
+      ],
+      [
+        "Game Logic",
+        "I was responsible for implementing the main game logic, allowing the player to win/lose the game",
+        "I was also responsible for handling enemy spawn mechanics, both at the start and when a building is destroyed"
+      ]
+    ],
+    "filters": [
+      "godot",
+      "3D",
+      "game-jam"
+    ],
+    "sorters": {
+      "name": "get souped",
+      "date": "2024-10"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "get_souped_cover.gif",
+      "cover": "https://www.youtube.com/watch?v=mVTk73hcaEY",
+      "gallery": [
+        "gif1.gif",
+        "gif2.gif",
+        "img1.png",
+        "img2.png",
+        "img3.png",
+        "img4.png"
+      ]
+    }
+  },
   "entryway": {
     "_id": "entryway",
     "_group": "games",
