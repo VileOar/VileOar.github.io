@@ -3,6 +3,7 @@ const projectOrdering = [
     "batter_time",
     "entryway",
     "double_dilemma",
+    "cut_crab",
     "nqueens",
     "bonzios",
     "get_souped",

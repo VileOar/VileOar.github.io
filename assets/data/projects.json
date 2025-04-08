@@ -303,6 +303,65 @@
       ]
     }
   },
+  "cut_crab": {
+    "_id": "cut_crab",
+    "_group": "games",
+    "_enabled": true,
+    "name": "Cut the Crab",
+    "description": "Cut the Crab is a fight to the death where only one crab may claim rightful ownership of the lagoon. To do so, they must prove themselves by engaging in mortal combat, through the ancient art of bubble fighting. Challenge a friend for this local coop game and prove yourself as the alpha crab.<br><br>This game was made for the Global Game Jam 2025. The theme for that was \"Bubbles\". Our team was inspired by the habit of many crab species of making bubbles. Additionally we felt that crabs themselves as a playable character would work very well and definitely fit our usual artistic style. Finally, as we had never tried making a multiplayer game in a game jam, we thought we'd try that for this one.",
+    "metadata": {
+      "link": "https://franciscorp.itch.io/cut-the-crab",
+      "context": "Game Jam",
+      "date": "January 2025",
+      "duration": "2 days",
+      "team": 4,
+      "engine": "Godot",
+      "format": "2D"
+    },
+    "brief": [
+      "1v1 deathmatch with crabs!",
+      "Simple controls fighting game",
+      "Made in Godot",
+      "Global Game Jam 2025, Theme: \"Bubbles\""
+    ],
+    "overview": [
+      "Game Designer",
+      "Gameplay Programmer",
+      "Provided help with other tasks as necessary"
+    ],
+    "roles": [
+      [
+        "Game Designer",
+        "As with all game jams, we all contributed to the game concept"
+      ],
+      [
+        "Gameplay Programmer",
+        "I was fully in charge of implementing player control and behaviour of the crab character and linking remaining features like interacting with bubbles and shooting them, each handled by other team members",
+        "Responsible for designing and managing the player's State Machine"
+      ],
+      [
+        "Provided help with other tasks as necessary"
+      ]
+    ],
+    "filters": [
+      "godot",
+      "2D",
+      "game-jam"
+    ],
+    "sorters": {
+      "name": "cut the crab",
+      "date": "2025-01"
+    },
+    "tags": [
+      
+    ],
+    "media": {
+      "thumbnail": "cut_crab_cover.png",
+      "cover": "cut_crab_cover.png",
+      "gallery": [
+      ]
+    }
+  },
   "get_souped": {
     "_id": "get_souped",
     "_group": "games",
